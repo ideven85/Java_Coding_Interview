@@ -3,6 +3,7 @@ package com.cleo.algorithms.arrays;
 import java.util.Arrays;
 
 public class ArrayOfProducts {
+
     public static int[] arrayOfProducts(int[] array) {
         // Write your code here.
         System.out.println(Arrays.toString(array));

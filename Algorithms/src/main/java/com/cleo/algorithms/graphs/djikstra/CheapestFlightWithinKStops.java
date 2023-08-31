@@ -31,6 +31,8 @@ public class CheapestFlightWithinKStops {
         }
     }
     Map<Integer,List<Pair>> flightMap = new HashMap<>();
+
+    // TODO: 31/08/23 "Incorrect Algorithm"
     public int findCheapestPrice(int n, int[][] flights, int src, int dst, int k) {
         for (int[] flight : flights) {
           //  List<Pair> destinations;
@@ -39,6 +41,7 @@ public class CheapestFlightWithinKStops {
         }
         int length = flights.length;
         Queue<Pair> queue = new LinkedList<>();
+
         queue.add(new Pair(src,0));
         boolean[] visited = new boolean[n+1];
         int[] costs = new int[n+1];
@@ -61,7 +64,7 @@ public class CheapestFlightWithinKStops {
 
             total_weight+=weight;
             System.out.println(Arrays.toString(costs));
-            if(stops==n+1)
+            if(stops==k)
                 break;
 
 
@@ -112,6 +115,7 @@ public class CheapestFlightWithinKStops {
         };
         int src=0,dst=3,k=1;
         CheapestFlightWithinKStops cheapestFlights = new CheapestFlightWithinKStops();
+        System.out.println(cheapestFlights.findCheapestPrice(n,flights,src,dst,k));
         System.out.println(cheapestFlights.findCheapestPriceV2(n,flights,src,dst,k));
     }
 

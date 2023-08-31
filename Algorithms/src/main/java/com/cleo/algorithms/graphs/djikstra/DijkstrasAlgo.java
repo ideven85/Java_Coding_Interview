@@ -87,6 +87,7 @@ public class DijkstrasAlgo {
             for(Node adjacentNode : adjacentNodes) {
                 if(settledNode.contains(adjacentNode)) continue;
                 Integer newValue =  node.costFromStartNode + node.directlyConnectedNodesCost.get(adjacentNode);
+                //Essence of Djiskstra's Algorithm
                 if(adjacentNode.costFromStartNode > newValue) {
                     adjacentNode.costFromStartNode = newValue;
                     adjacentNode.pathFromStartNode = node.pathFromStartNode + adjacentNode.name;

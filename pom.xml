@@ -24,7 +24,7 @@
         <module>Revision</module>
         <module>Algorithms</module>
         <module>Low_Level_Designs</module>
-        <module>CodeChef</module>
+        <module>Coding_Challenges</module>
     </modules>
     <properties>
         <maven.compiler.source>20</maven.compiler.source>
