@@ -25,20 +25,20 @@ public class Main {
         current.next = new ListNode(3);
         current=current.next;
 
-        current.next = new ListNode(10);
+        current.next = new ListNode(9);
         current=current.next;
         current.next= new ListNode(4);
 
         current=current.next;
         printList(head);
-        System.out.println();
+       /* System.out.println();
         head=reverse(head);
         printList(head);
         System.out.println();
-        PalindromeLinkedList p = new PalindromeLinkedList();
+       PalindromeLinkedList p = new PalindromeLinkedList();
         printList(head);
         System.out.println("Is palindrome?");
-        DeleteValue deleteValue = new DeleteValue();
+       /* DeleteValue deleteValue = new DeleteValue();
        // head=deleteValue.removeElements(head,1);
        // printList(head);
         System.out.println();
@@ -49,6 +49,10 @@ public class Main {
         System.out.println();
         ListNode lst = sortedList.sortList(head);
         printList(lst);
+      */  AddTwoNumbers addTwoNumbers = new AddTwoNumbers();
+        ListNode added = addTwoNumbers.addTwoNumbers(head,head);
+        System.out.println(added.val);
+        printList(added);
 
       //  System.out.println(p.isPalindrome(head));
     }
