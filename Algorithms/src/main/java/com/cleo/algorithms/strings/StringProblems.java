@@ -3,15 +3,6 @@ package com.cleo.algorithms.strings;
 import java.util.*;
 import java.util.stream.Collectors;
 
-class TrieNode{
-    char c;
-    TrieNode next;
-    boolean isEnd;
-
-    public TrieNode() {
-    }
-}
-
 
 public class StringProblems {
 

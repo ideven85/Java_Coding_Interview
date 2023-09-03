@@ -52,13 +52,3 @@ public class SuffixTrie {
     }
 
 }
-class Program{
-
-
-    public static void main(String[] args) {
-
-    }
-
-
-
-}
