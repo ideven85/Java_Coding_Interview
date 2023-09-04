@@ -94,14 +94,40 @@ public class Trie {
 
 
     }
+
+    private void print(TrieNode root, String word) {
+        if (root == null) {
+            return;
+        }
+
+        if (root.isTerminating) {
+            System.out.println(word);
+        }
+
+        for (TrieNode child : root.children) {
+            if (child == null) {
+                continue;
+            }
+            String fwd = word + child.data;
+            print(child, fwd);
+        }
+    }
+
+    public void print() {
+        print(this.root, "");
+    }
     public boolean patternMatching(ArrayList<String> vect, String pattern) {
         // Write your code here
+        //dictionary=["habcd","dehf","ghi","hello"]
+        // [pattern="hi"]
+        // answer=true
         for(String word:vect){
             add(word);
         }
+        return false;
 
     }
-  /**  public boolean delete(String word) {
+  /*  public boolean delete(String word) {
         if (word == null || word.length() == 0) {
             return false;
         }
@@ -145,7 +171,7 @@ public class Trie {
     public static void main(String[] args) {
         Trie trie = new Trie();
         System.out.println(trie.search("anc"));
-        trie.add("deven");
+        trie.add("de");
         trie.add("anchit");
         trie.add("aanchal");
         trie.add("aashvi");
@@ -156,5 +182,7 @@ public class Trie {
         trie.remove("deven");
         System.out.println(trie.search("deven"));
         System.out.println(trie.getCount());
+        //trie.print(trie.root,"");
+        trie.print();
     }
 }
