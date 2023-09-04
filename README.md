@@ -1,2 +1,2 @@
-# Coding_Problems
-# Full Collection of problems for Java Coding Interview# Java_Coding_Interview
+# Repository for Interview Problems and sample LLD algorithms
+# Full Collection of problems for Java Coding Interview
