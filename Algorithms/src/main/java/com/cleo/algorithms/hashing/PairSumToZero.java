@@ -32,7 +32,7 @@ public class PairSumToZero {
     }
 
     public static void main(String[] args) {
-        int[] arr = {1,1,1};
+        int[] arr = {1,-1,1};
         System.out.println(PairSum(arr,arr.length));
       //  System.out.println(subarraySum(arr,2));
     }

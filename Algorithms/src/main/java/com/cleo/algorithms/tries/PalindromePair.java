@@ -11,10 +11,15 @@ public class PalindromePair {
     public PalindromePair() {
         root = new TrieNode('\0');
     }
-
+    int counter=0;
     private void add(TrieNode root, String word) {
+        if(counter==0) {
+         //   System.out.print(word+ " ");
+            counter++;
+        }
         if (word.length() == 0) {
             root.isTerminating = true;
+            counter--;
             return;
         }
 
@@ -33,6 +38,7 @@ public class PalindromePair {
     public void add(String word) {
         if (word.isEmpty()) return;
         add(root, word);
+       // System.out.print(word+" ");
         add(word.substring(1));
         add(word.substring(0, word.length() - 1));
     }
@@ -126,16 +132,17 @@ public class PalindromePair {
       public static void main(String[] args) {
         PalindromePair pair = new PalindromePair();
         ArrayList<String> words = new ArrayList<>();
-        words.add("abc");
-        words.add("def");
+        words.add("ab");
+        words.add("bba");
         words.add("ghi");
         words.add("mcba");
         words.add("notes");
         words.add("den");
       //  words.add("cba");
         //do dont no not note notes den
-        System.out.println(pair.isPalindromePair(words));
+        System.out.println(pair.isPalindromePairV1(words));
         String word="bbbab";
+          System.out.println("Notes:(seton)"+pair.search("seton"));
         System.out.println(word.equals(new StringBuilder(word).reverse().toString()));
 
     }

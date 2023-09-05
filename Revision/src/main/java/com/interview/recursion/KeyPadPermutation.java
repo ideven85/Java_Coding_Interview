@@ -41,7 +41,7 @@ public class KeyPadPermutation {
     }
     
     public static void main(String args[]){
-        int input[] = {2,3,1,5};
+        int input[] = {2,3};
         KeyPadPermutation kpp = new KeyPadPermutation();
         kpp.permute(input);
     }

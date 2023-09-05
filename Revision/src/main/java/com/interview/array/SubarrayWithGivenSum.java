@@ -36,6 +36,18 @@ public class SubarrayWithGivenSum {
         }
         return null;
     }
+    public static void subsets(int[] input, int index, String set) {
+        if (index == input.length) {
+            System.out.println(set);
+            return;
+        }
+        subsets(input, index + 1, set + input[index] + " ");
+        subsets(input,index+1,set);
+    }
+
+    public static void printSubsets(int input[]) {
+        subsets(input,0,"");
+    }
     
     public static void main(String args[]){
         SubarrayWithGivenSum sgs = new SubarrayWithGivenSum();

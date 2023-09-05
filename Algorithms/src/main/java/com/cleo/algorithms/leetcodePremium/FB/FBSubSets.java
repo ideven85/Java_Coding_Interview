@@ -50,8 +50,7 @@ output: { {}, {A} {A,B} {A,C} {A,D} {A,B,C,D},{B,C,D},{C,D},{D} } etc all subset
 
 
 class FBSubSets {
-    public static void
-    findSubsets(List<List<Integer>> subset, ArrayList<Integer> nums, ArrayList<Integer> output, int index)
+    public static void findSubsets(List<List<Integer>> subset, ArrayList<Integer> nums, ArrayList<Integer> output, int index)
     {
         // Base Condition
         if (index == nums.size()) {

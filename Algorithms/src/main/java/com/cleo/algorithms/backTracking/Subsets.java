@@ -1,15 +1,12 @@
 package com.cleo.algorithms.backTracking;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
+import java.util.*;
+import java.util.stream.IntStream;
 
 public class Subsets {
 
-    List<List<Integer>> subsets = new ArrayList<>();
-
-
-    public void generateSubsets(int[] arr, int low,int high, int k){
+ private final List<List<Integer>> subsets = new ArrayList<>();
+   public void generateSubsets(int[] arr, int low,int high, int k){
         System.out.println(Arrays.toString(arr));
         if(high==low){
             //System.out.println(high+" " + low);
@@ -53,8 +50,11 @@ public class Subsets {
         return subsets;
     }
 
+
+
     public static void main(String[] args) {
         Subsets subsets1 = new Subsets();
-        System.out.println(subsets1.combine(4,2));
+       // System.out.println(subsets1.combine(4,2));
+
     }
 }
