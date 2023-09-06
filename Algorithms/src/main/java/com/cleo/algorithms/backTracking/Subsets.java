@@ -7,7 +7,7 @@ public class Subsets {
 
  private final List<List<Integer>> subsets = new ArrayList<>();
    public void generateSubsets(int[] arr, int low,int high, int k){
-        System.out.println(Arrays.toString(arr));
+       //  System.out.println(Arrays.toString(arr));
         if(high==low){
             //System.out.println(high+" " + low);
             List<Integer> temp = new ArrayList<>();
@@ -39,6 +39,8 @@ public class Subsets {
                 arr[i-1][j-1]=j;
             }
         }
+        for(int[] a:arr)
+            System.out.println(Arrays.toString(a));
         for (int i = 1; i <=n; i++) {
             for (int j = 0; j < k; j++) {
 
@@ -54,7 +56,7 @@ public class Subsets {
 
     public static void main(String[] args) {
         Subsets subsets1 = new Subsets();
-       // System.out.println(subsets1.combine(4,2));
+      System.out.println(subsets1.combine(4,2));
 
     }
 }

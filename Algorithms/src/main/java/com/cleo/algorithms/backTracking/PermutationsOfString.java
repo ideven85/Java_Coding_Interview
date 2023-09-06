@@ -1,8 +1,6 @@
 package com.cleo.algorithms.backTracking;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
+import java.util.*;
 
 public class PermutationsOfString {
     private static List<String> permutations;
@@ -14,7 +12,6 @@ public class PermutationsOfString {
             return output;
         }
         permutations=new ArrayList<>();
-        permutations.add("");
         permute(input,0,input.length()-1);
         String[] answer = new String[permutations.size()];
         for (int i = 0; i < permutations.size(); i++) {
@@ -22,6 +19,31 @@ public class PermutationsOfString {
         }
         return answer;
 
+    }
+
+
+    public static String[] permuteAndStore(String str){
+       Set<String> permutations= permuteAndStore("",str);
+       String[] output = new String[permutations.size()];
+        int i=0;
+        for(String s:permutations){
+            output[i++]=s;
+        }
+        return output;
+
+    }
+    private static Set<String> permuteAndStore(String prefix,String input){
+         Set<String> set = new LinkedHashSet<>();
+
+        int n = input.length();
+        if(n==0)
+            set.add(prefix);
+        else{
+            for (int i = 0; i < n; i++) {
+                set.addAll(permuteAndStore(prefix+input.charAt(i),input.substring(i+1,n)+input.substring(0,i)));
+            }
+        }
+        return set;
     }
     private static void permute(String input, int low, int high){
         if(low==high){
@@ -46,7 +68,14 @@ public class PermutationsOfString {
 
 
     public static void main(String[] args) {
-        System.out.println(Arrays.toString(permutationOfString("abc")));
+        var first = System.nanoTime();
+        System.out.println(Arrays.toString(permutationOfString("abcdefg")));
+        var second = System.nanoTime();
+        System.out.println(Arrays.toString(permuteAndStore("abcdefg")));
+        var third = System.nanoTime();
+        System.out.println("First took:" +(second-first));
+        System.out.println("Second Using Hashset took:"+(third-second));
+        System.out.println("Ratio:"+(third-second)*1.0/(second-first));
     }
 
 }

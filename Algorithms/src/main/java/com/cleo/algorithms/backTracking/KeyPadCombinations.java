@@ -49,14 +49,14 @@ public class KeyPadCombinations {
     }
     private static void keyPadHelper(int[] input, int pos, char[] output){
         if(pos==input.length){
-            String temp="";
+            StringBuilder temp= new StringBuilder();
             for (int i = 0; i < input.length; i++) {
                 if(output[i]=='\0')
-                    temp+="";
+                    temp.append("");
                 else
-                    temp+=output[i];
+                    temp.append(output[i]);
             }
-                result.add(temp);
+                result.add(temp.toString());
             return;
         }
         String str=getKeyPadNumbers(input[pos]);
@@ -98,5 +98,43 @@ public class KeyPadCombinations {
         int n = 230;
         System.out.println(Arrays.toString(keypad(n)));
         printKeypad(23);
+    }
+}
+class keypad {
+    public static String getOptions(int digit) {
+        if (digit == 2) {
+            return "abc";
+        }
+        if (digit == 3) {
+            return "def";
+        }
+        if (digit == 4) {
+            return "ghi";
+        }
+        if (digit == 7) {
+            return "pqrs";
+        }
+        return "";
+    }
+
+    public static String[] KeypadCombinations(int input) {
+        if (input == 0) {
+            String[] output = new String[1];
+            output[0] = "";
+            return output;
+        }
+
+        String[] smallOutput = KeypadCombinations(input / 10);
+        int lastDigit = input % 10;
+        String lastDigitOptions = getOptions(lastDigit);
+        String[] output = new String[smallOutput.length * lastDigitOptions.length()];
+        int K = 0;
+        for (String string : smallOutput) {
+            for (int j = 0; j < lastDigitOptions.length(); j++) {
+                output[K] = string + lastDigitOptions.charAt(j);
+                K++;
+            }
+        }
+        return output;
     }
 }

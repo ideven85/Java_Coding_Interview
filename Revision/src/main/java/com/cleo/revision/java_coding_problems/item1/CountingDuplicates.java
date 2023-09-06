@@ -41,6 +41,9 @@ public class CountingDuplicates {
 
     public static String firstNonRepeatedCharacterV2(String str){
 
+        /**
+         * Forgotten easily
+         */
         Map<Integer, Long> chs = str.codePoints()
                 .boxed()
                 .collect(Collectors.groupingBy(Function.identity(),
@@ -60,7 +63,26 @@ public class CountingDuplicates {
      * @return the most frequent occurring character
      */
     public static char countingMostRepeatedCharacter(String str){
-        return 'a';
+        Map<Character,Integer> map = new HashMap<>();
+        char c='a';
+        int max_count=0;
+        /**
+         * This approach sucks
+         */
+        for(char s:str.toCharArray()){
+            if(map.containsKey(s)){
+                int count=map.get(s)+1;
+                if(max_count<count){
+                    max_count=count;
+                    c=s;
+                }
+                map.put(s,count);
+
+            }else
+                map.put(s,1);
+        }
+        return c;
+
     }
 
     public static void main(String[] args) {
