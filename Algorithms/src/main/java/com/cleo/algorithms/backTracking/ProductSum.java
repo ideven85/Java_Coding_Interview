@@ -37,7 +37,10 @@ public class ProductSum {
         c1.add(2);
         c1.add(3);
         c1.add(Arrays.asList(1,2));
+        var start = System.nanoTime();
         System.out.println(productSum(c));
+        var finish = System.nanoTime();
+        System.out.println(finish-start);
         System.out.println(productSum(c1));
     }
 }
