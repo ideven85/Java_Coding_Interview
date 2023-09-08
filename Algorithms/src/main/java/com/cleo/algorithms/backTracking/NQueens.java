@@ -120,6 +120,8 @@ public class NQueens {
     }
 
     public static void main(String[] args) {
+        NQueens nQueens = new NQueens();
+        System.out.println(nQueens.solveNQueens(4));
 
     }
 
