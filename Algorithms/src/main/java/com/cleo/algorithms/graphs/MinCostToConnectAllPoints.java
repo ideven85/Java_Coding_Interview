@@ -184,7 +184,7 @@ class Solution {
 
  */
 
-class Solution1 {
+class SolutionKruskals {
     // Kruskal's Algorithm
     public int minCostConnectPoints(int[][] points) {
         if (points == null || points.length == 0) {
@@ -275,7 +275,7 @@ class Solution1 {
 
     public static void main(String[] args) {
         int[][] points = {{0, 0}, {2, 2}, {3, 10}, {5, 2}, {7, 0}};
-        Solution1 solution = new Solution1();
+        SolutionKruskals solution = new SolutionKruskals();
         System.out.print("Minimum Cost to Connect Points = ");
         System.out.println(solution.minCostConnectPoints(points));
     }

@@ -1,7 +1,7 @@
 package com.cleo.algorithms.graphs;
 
 import java.util.*;
-class Solution {
+class SolutionAllPathsSourceTarget {
     private int target;
     private int[][] graph;
     private HashMap<Integer, List<List<Integer>>> memo;

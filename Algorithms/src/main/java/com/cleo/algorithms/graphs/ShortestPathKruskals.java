@@ -2,11 +2,11 @@ package com.cleo.algorithms.graphs;
 
 import java.util.*;
 import java.util.stream.IntStream;
-class Pair{
+class Pair1{
     int node;
     int weight;
 
-    public Pair(int node, int weight) {
+    public Pair1(int node, int weight) {
         this.node = node;
         this.weight = weight;
     }
@@ -21,18 +21,18 @@ class Pair{
 
 
 }
-class PairComparator implements Comparator<Pair>{
+class PairComparator implements Comparator<Pair1>{
     @Override
-    public int compare(Pair o1, Pair o2) {
+    public int compare(Pair1 o1, Pair1 o2) {
         return o2.getWeight()-o1.getWeight();
     }
 }
-class UnionFind{
+class UnionFind1{
 
     private final int[] root;
     private final int[] rank;
 
-    public UnionFind(int V){
+    public UnionFind1(int V){
         root= IntStream.range(0,V).toArray();
         rank=new int[V];
         Arrays.fill(rank,1);
@@ -67,7 +67,7 @@ public class ShortestPathKruskals {
 
 
 
-    private final Map<Integer, List<Pair>> map = new HashMap<>();
+    private final Map<Integer, List<Pair1>> map = new HashMap<>();
     public int[][][] kruskalsAlgorithm(int[][][] edges) {
         // Write your code here.
         //[
@@ -93,18 +93,18 @@ public class ShortestPathKruskals {
 
         for(var edge:edges){
             for (int i = 0; i < edge.length; i++) {
-                map.get(i).add(new Pair(edge[i][0],edge[i][1]));
+                map.get(i).add(new Pair1(edge[i][0],edge[i][1]));
             }
         }
         map.forEach((key,value)-> value.sort(new PairComparator()));
-        UnionFind uf = new UnionFind(V);
+        UnionFind1 uf = new UnionFind1(V);
 
         //Queue<Pair> queue = new PriorityQueue<>((x,y)->x.weight- y.weight);
         List<List<Integer>> answer = new ArrayList<>();
         for(var m:map.entrySet()){
             int currentNode=m.getKey();
-            List<Pair> connections = m.getValue();
-            for(Pair p:connections){
+            List<Pair1> connections = m.getValue();
+            for(Pair1 p:connections){
                 int node=p.node;
                 int weight= p.weight;
                 if(!uf.connected(currentNode,node)){

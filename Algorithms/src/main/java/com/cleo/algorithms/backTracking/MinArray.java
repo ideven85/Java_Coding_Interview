@@ -3,9 +3,12 @@ public class MinArray {
     public static int findMin(int[] input,int startIndex) {
         if(startIndex == input.length) { return Integer.MAX_VALUE;
         }
-        int minSmallArray = findMin(input, startIndex + 1); if(input[startIndex]<minSmallArray) {
-            return input[startIndex]; } else {
-            return minSmallArray; }
+        int minSmallArray = findMin(input, startIndex + 1);
+        if(input[startIndex]<minSmallArray) {
+            return input[startIndex];
+        } else {
+            return minSmallArray;
+        }
     }
     public static void printMin1(int []a) {
         int min = findMin(a,0); System.out.println(min);
@@ -19,4 +22,5 @@ public class MinArray {
     public static void main(String[] args) {
         int a[] = {3,4,2,1,7,8};
         printMin2(a,0,Integer.MAX_VALUE);
-    } }
+    }
+}

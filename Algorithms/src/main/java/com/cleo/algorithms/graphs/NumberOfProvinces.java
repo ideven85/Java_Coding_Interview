@@ -9,7 +9,7 @@ class Solution1 {
         }
 
         int n = isConnected.length;
-        UnionFind1 uf = new UnionFind1(n);
+        UnionFind2 uf = new UnionFind2(n);
         for (int i = 0; i < n; i++) {
             for (int j = 0; j < n; j++) {
                 if (isConnected[i][j] == 1) {
@@ -22,7 +22,7 @@ class Solution1 {
     }
 
 }
-class Solution2 {
+class SolutionUsingDFS {
 
     public static void dfs(int i,int[] vis,int[][]roads,int n,ArrayList<ArrayList<Integer>>adj){
         vis[i]=1;
@@ -69,12 +69,12 @@ class Solution2 {
         return cnt;
     }
 }
-class UnionFind1 {
+class UnionFind2 {
     private int[] root;
     private int[] rank;
     private int count;
 
-    UnionFind1(int size) {
+    UnionFind2(int size) {
         root = new int[size];
         rank = new int[size];
         count = size;
