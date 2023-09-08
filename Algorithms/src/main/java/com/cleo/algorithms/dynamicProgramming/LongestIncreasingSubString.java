@@ -12,8 +12,8 @@ public class LongestIncreasingSubString {
             if (map.containsKey(i)) {
                 continue;
             }
-            left = map.containsKey(i - 1) ? map.get(i - 1) : 0;
-            right = map.containsKey(i + 1) ? map.get(i + 1) : 0;
+            left = map.getOrDefault(i - 1, 0);
+            right = map.getOrDefault(i + 1, 0);
 
             int sum = left + right + 1;
             map.put(i, sum);

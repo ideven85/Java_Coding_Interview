@@ -77,8 +77,8 @@ public class CoinChanging {
 
     public static void main(String args[]){
         CoinChanging cc = new CoinChanging();
-        int total = 15;
-        int coins[] = {3,4,6,7,9};
+        int total = 5;
+        int coins[] = {1,2,5};
         System.out.println(cc.numberOfSolutions(total, coins));
         System.out.println(cc.numberOfSolutionsOnSpace(total, coins));
         cc.printCoinChangingSolution(total, coins);
