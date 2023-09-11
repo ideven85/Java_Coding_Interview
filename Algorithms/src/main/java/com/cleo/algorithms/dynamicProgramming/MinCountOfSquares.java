@@ -56,7 +56,7 @@ public class MinCountOfSquares {
         return  1 + minAns;
 
     }
-    private static int minCount(int n,Map<Integer,Integer> memo,int count){
+  /*  private static int minCount(int n,Map<Integer,Integer> memo,int count){
         if(memo.get(n)!=null)
             return count;
         int sqrt=0;
@@ -76,9 +76,9 @@ public class MinCountOfSquares {
 
         return minCount(n,memo,count);
     }
-
+*/
     public static void main(String[] args) {
         int n=30;
-        System.out.println(minCount(n));
+        System.out.println(minCount(41));
     }
 }

@@ -1,5 +1,7 @@
 package com.interview.dynamic;
 
+import java.util.Arrays;
+
 /**
  * http://www.geeksforgeeks.org/maximum-size-sub-matrix-with-all-1s-in-a-binary-matrix/
  */
@@ -16,16 +18,18 @@ public class MaximumSizeSubMatrix {
         int max = 0;
         for(int i=0; i < arr.length; i++){
             result[i][0] = arr[i][0];
-            if (result[i][0] == 1)
+            if (result[i][0] == 0)
             {
+                result[i][0]=1;
                 max = 1;
             }
         }
         
         for(int i=0; i < arr[0].length; i++){
             result[0][i] = arr[0][i];
-            if (result[0][i] == 1)
+            if (result[0][i] == 0)
             {
+                result[0][i]=1;
                 max = 1;
             }
             
@@ -34,23 +38,25 @@ public class MaximumSizeSubMatrix {
         
         for(int i=1; i < arr.length; i++){
             for(int j=1; j < arr[i].length; j++){
-                if(arr[i][j] == 0){
+                if(arr[i][j] == 1){
                     continue;
                 }
-                int t = min(result[i-1][j],result[i-1][j-1],result[i][j-1]);
+                int t = Math.min(result[i-1][j],Math.min(result[i-1][j-1],result[i][j-1]));
                 result[i][j] =  t +1;
                 if(result[i][j] > max){
                     max = result[i][j];
                 }
             }
         }
-        return max;
+       /* for(var row:result)
+            System.out.println(Arrays.toString(row));
+    */    return max;
     }
     
     
     public static void main(String args[]){
         
-        int arr[][] = {{0,1,1,0,1},{1,1,1,0,0},{1,1,1,1,0},{1,1,1,0,1}};
+        int arr[][] = {{0,0,1},{0,1,1},{0,1,1}};
         MaximumSizeSubMatrix mssm = new MaximumSizeSubMatrix();
         int result = mssm.maxSize(arr);
         System.out.print(result);

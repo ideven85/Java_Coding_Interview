@@ -19,11 +19,12 @@ public class MinCoinsForChange {
                     else
                         toCompare=dp[i-denom]+1;
                     dp[i]=Math.min(dp[i],toCompare);
+                    System.out.println(Arrays.toString(dp));
+
                 }
             }
 
         }
-        System.out.println(Arrays.toString(dp));
         return dp[dp.length-1]==Integer.MAX_VALUE?-1:dp[dp.length-1];
     }
 

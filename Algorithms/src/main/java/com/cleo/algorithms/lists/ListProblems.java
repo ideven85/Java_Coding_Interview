@@ -37,7 +37,12 @@ public class ListProblems {
         // Write your code here.
         return null;
     }
+    public static LinkedList shiftLinkedList(LinkedList head, int k) {
+        // Write your code here.
 
+
+        return null;
+    }
 
     public static void main(String[] args) {
 

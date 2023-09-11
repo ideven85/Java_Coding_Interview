@@ -268,6 +268,31 @@ public class TreeProblems {
         tree1.right=mergeBinaryTrees(tree1.right,tree2.right);
         return tree1;
     }
+ private static final   List<BinaryTree> first=new ArrayList<>();
+
+
+    private static List<BinaryTree> inOrderTraversal(BinaryTree root){
+        if(root!=null){
+            if(root.left==null&&root.right==null)
+                first.add(root);
+            inOrder(root.left);
+            inOrder(root.right);
+        }
+        return first;
+    }
+    public static boolean compareLeafTraversal(BinaryTree tree1, BinaryTree tree2) {
+        // Write your code here.
+        List<BinaryTree> f1,second;
+       f1= inOrderTraversal(tree1);
+       second=inOrderTraversal(tree2);
+       if(f1.size()!=second.size())
+           return false;
+        for (int i = 0; i < f1.size(); i++) {
+            if(f1.get(i).value!=second.get(i).value)
+                return false;
+        }
+        return true;
+    }
 
     public static int height(BinaryTree root){
         if(root==null)
@@ -377,6 +402,56 @@ public class TreeProblems {
 
     return false;
     }
+    public static BinaryTree rightSiblingTree(BinaryTree root) {
+        // Write your code here.
+        if(root==null)
+            return null;
+       //dfsUtilRightSibling(root,root.left,root.right);
+        rightSiblingTreeHelper(root,null,false);
+        return root;
+    }
+    //Revise
+    private static void rightSiblingTreeHelper(BinaryTree current,BinaryTree parent,boolean isLeftChild){
+        if(current==null)
+            return;
+        var left = current.left;
+        var right = current.right;
+        rightSiblingTreeHelper(left,current,true);
+        if(parent==null)
+            current.right=null;
+        else if(isLeftChild){
+            current.right=parent.right;
+        }else{
+            if(parent.right==null)
+                current.right=null;
+            else
+                current.right=parent.right.left;
+        }
+        rightSiblingTreeHelper(right,current,false);
+    }
+    private static BinaryTree dfsUtilRightSibling(BinaryTree current,BinaryTree left,BinaryTree right){
+        if(current==null)
+            return null;
+        if(left==null&&right==null)
+            return current;
+        if(left!=null&&right!=null) {
+            left.right = right;
+             dfsUtilRightSibling(left,left.left,left.right);
+             dfsUtilRightSibling(right,right.left,right.right);
+
+        }
+        else if(left!=null) {
+
+           dfsUtilRightSibling(left,left.left,left.right);
+            left.right = null;
+        }else{
+            dfsUtilRightSibling(right,right.left,right.right);
+            right.right=null;
+
+        }
+        return current;
+
+    }
     public static void main(String[] args) {
         BinaryTree root = new BinaryTree(10);
         insert(root,8);
@@ -422,6 +497,11 @@ public class TreeProblems {
         List<Integer> arrayOne = Arrays.asList(10, 15, 8, 12, 94, 81, 5, 2, 11);
         List<Integer> arrayTwo = Arrays.asList(10, 8, 5, 15, 2, 12, 11, 94, 81);
         System.out.println(sameBsts(arrayOne,arrayTwo));
+        /*root=rightSiblingTree(root);
+        System.out.println(root.left.right.value);*/
+        inOrder(root);
+        inOrder(root2);
+        System.out.println(compareLeafTraversal(root,root2));
     }
 }
 

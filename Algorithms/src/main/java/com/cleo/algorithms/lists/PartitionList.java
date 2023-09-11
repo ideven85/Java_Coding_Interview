@@ -53,7 +53,7 @@ public class PartitionList {
         list=list.next;list.next = new LinkedList(2);
         list=list.next;list.next = new LinkedList(1);
         list=list.next;list.next = new LinkedList(-4);
-        head = rearrangeLinkedList(head,-4);
+        head = rearrangeLinkedList(head,2);
         while(head!=null){
             System.out.print(head.value+" ");
             head=head.next;
