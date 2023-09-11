@@ -1,3 +1,6 @@
 [submodule "Java-Coding-Problems"]
 	path = Java-Coding-Problems
 	url = https://github.com/PacktPublishing/Java-Coding-Problems
+[submodule "java-design-patterns"]
+	path = java-design-patterns
+	url = https://github.com/iluwatar/java-design-patterns

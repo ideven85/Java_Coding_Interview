@@ -76,10 +76,17 @@
             <dependency>
                 <groupId>org.junit.vintage</groupId>
                 <artifactId>junit-vintage-engine</artifactId>
-                <version>5.4.2</version>
+                <version>5.10.0</version>
                 <scope>test</scope>
+                <exclusions>
+                    <exclusion>
+                        <groupId>org.hamcrest</groupId>
+                        <artifactId>hamcrest-core</artifactId>
+                    </exclusion>
+                </exclusions>
             </dependency>
             <dependency>
+
                 <groupId>org.mockito</groupId>
                 <artifactId>mockito-core</artifactId>
                 <version>4.8.0</version>
@@ -136,10 +143,13 @@
         </dependency>
         </dependencies>
     <build>
+
         <plugins>
+
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-compiler-plugin</artifactId>
+
                 <configuration>
                     <source>20</source>
                     <target>20</target>

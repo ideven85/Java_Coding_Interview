@@ -1,5 +1,9 @@
 package com.cleo.algorithms.backTracking;
 
+import java.util.ArrayList;
+import java.util.LinkedList;
+import java.util.List;
+
 // TODO: 06/09/23 "Check the set Zero Placement"
 public class PlaceNQueens {
     public static void placeNQueens(int n){
@@ -10,73 +14,58 @@ public class PlaceNQueens {
          * Print output as specified in the question
          */
         int[][] board = new int[n][n];
-        placeQueens(board,0,n);
+        List<List<Integer>> res = new ArrayList<List<Integer>>();
+        recurse(board,0,res);
 
 
-    }
-    public static boolean isSafe(int[][] board,int row, int column,int N){
-        if(row<0||row>=N||column<0||column>=N)
-            return false;
-        for (int i = 0; i < N; i++) {
-            if(board[row][i]==1)
-                return false;
-            if(board[i][column]==1)
-                return false;
-
-        }
-        for (int i = row; i >0; i--) {
-            if(board[i-1][i-1]==1)
-                return false;
-        }
-        for (int i = column; i >0 ; i--) {
-            if(board[i-1][i-1]==1)
-                return false;
-        }
-        for (int i = row; i < N-1; i++) {
-            if(board[i+1][i+1]==1)
-                return false;
-        }
-        for (int i = column; i < N-1; i++) {
-            if(board[i+1][i+1]==1)
-                return false;
-        }
-        return true;
 
     }
-
-    public static void placeQueens(int[][] board,int row, int N){
-        if(row==N){
-            for (int i = 0; i < N; i++) {
-                for (int j = 0; j < N; j++) {
-                    System.out.print(board[i][j]+" ");
+    private static void recurse(int[][] board, int colIndex,List<List<Integer>> res){
+        if(colIndex==board.length){
+            res=construct(board);
+            for(List<Integer> row:res){
+                for(int r:row){
+                    System.out.print(r+" ");
                 }
             }
-
             System.out.println();
-            //board[N-1][N-1]=0;
             return;
+
         }
-        for (int column = 0; column < N; column++) {
-            if(isSafe(board,row,column,N)) {
-                board[row][column] = 1;
-
-                placeQueens(board,row+1,N);
-
-
-            }else{
-                if(row>0)
-                    placeQueens(board,row-1,N);
+        for (int i = 0; i < board.length; i++) {
+            if(validate(board,i,colIndex)){
+                board[i][colIndex]=1;
+                recurse(board,colIndex+1,res);
+                board[i][colIndex]=0;
             }
-            board[row][column]=0;
-
-
         }
 
+    }
+    private static boolean validate(int[][] board, int x, int y){
+        for (int i = 0; i < board.length; i++) {
+            for (int j = 0; j < y; j++) {
+                if(board[i][j]==1&&(x+j==y+i||x+y==i+j||x==i))
+                    return false;
+            }
 
+        }
+        return true;
+    }
+    private static List<List<Integer>> construct(int[][] board){
+        List<List<Integer>> res = new LinkedList<>();
+        for(int[] b:board){
+            List<Integer> temp=new LinkedList<>();
+            for(int x:b){
+                temp.add(x);
+            }
+            res.add(temp);
+        }
+        return res;
 
     }
 
+
     public static void main(String[] args) {
-        placeNQueens(3);
+        placeNQueens(4);
     }
 }
