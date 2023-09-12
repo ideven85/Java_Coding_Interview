@@ -2,6 +2,10 @@ package com.cleo.algorithms.greedy;
 
 import java.util.*;
 
+/**
+ * Asked in interview last year
+ * Cleared the coding round based only on this question's answer
+ */
 public class LargestNumber {
 
     static class ValueComparator implements Comparator<String>{

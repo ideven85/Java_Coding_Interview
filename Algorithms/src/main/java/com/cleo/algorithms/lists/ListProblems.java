@@ -4,8 +4,7 @@ public class ListProblems {
 
 
 
-    public static void removeKthNodeFromEnd(LinkedList head, int k)
-    {
+    public static void removeKthNodeFromEnd(LinkedList head, int k) {
         // Write your code here.
         int length=0;
         LinkedList current=head,temp=head;

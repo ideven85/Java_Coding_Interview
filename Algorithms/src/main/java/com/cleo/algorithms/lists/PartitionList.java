@@ -1,15 +1,6 @@
 package com.cleo.algorithms.lists;
 
 public class PartitionList {
-    static class LinkedList {
-        public int value;
-        public LinkedList next;
-
-        public LinkedList(int value) {
-            this.value = value;
-            next = null;
-        }
-    }
 
     public static LinkedList rearrangeLinkedList(LinkedList head, int k) {
         // Write your code here.
@@ -17,7 +8,7 @@ public class PartitionList {
         while(head!=null){
             LinkedList next= head.next;
             head.next = null;
-            if(head.value<k){
+            if(head.value<=k){
                 if(beforeStart == null){
                     beforeStart = head;
                     beforeEnd = beforeStart;
@@ -25,16 +16,20 @@ public class PartitionList {
                     beforeEnd.next = head;
                     beforeEnd = head;
                 }
-            }else{
-                if(afterStart == null){
-                    afterStart = head;
-                    afterEnd = afterStart;
-
-                }else{
-                    afterEnd.next = head;
-                    afterEnd = head;
-                }
             }
+
+
+            else {
+                    if(afterStart == null){
+                        afterStart = head;
+                        afterEnd = afterStart;
+
+                    }else{
+                        afterEnd.next = head;
+                        afterEnd = head;
+                    }
+                }
+
             head = next;
         }
         if(beforeStart==null)
@@ -45,18 +40,21 @@ public class PartitionList {
     }
 
     public static void main(String[] args) {
-        LinkedList list = new LinkedList(3);
+        LinkedList list = new LinkedList(12);
         LinkedList head = list;
-        list.next = new LinkedList(0);
+        list.next = new LinkedList(10);
         list=list.next;
-        list.next = new LinkedList(3);
+        list.next = new LinkedList(1);
+        list=list.next;
+        list.next = new LinkedList(5);
         list=list.next;list.next = new LinkedList(2);
         list=list.next;list.next = new LinkedList(1);
         list=list.next;list.next = new LinkedList(-4);
-        head = rearrangeLinkedList(head,2);
+        head = rearrangeLinkedList(head,-4);
+        ShiftLinkedList list1 = new ShiftLinkedList();
+        head=list1.kReverse(head,4);
         while(head!=null){
-            System.out.print(head.value+" ");
-            head=head.next;
+            System.out.print(head.value + " ");
         }
 
 

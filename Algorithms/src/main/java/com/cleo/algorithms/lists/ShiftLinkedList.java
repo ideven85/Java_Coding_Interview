@@ -1,10 +1,22 @@
 package com.cleo.algorithms.lists;
 
 public class ShiftLinkedList {
+    public static int length(LinkedList head){
+        int count=0;
+        while(head!=null){
+            head=head.next;
+            count++;
+        }
+        return count;
+    }
     public static LinkedList kReverse(LinkedList head, int k) {
         //Your code goes here
         if(k==0)
             return head;
+        int size=length(head);
+        if(k<0)
+            k=size+k;
+        System.out.println(k);
         LinkedList current = head;
 //last node after reverse
         LinkedList prevTail = null; //first node before reverse

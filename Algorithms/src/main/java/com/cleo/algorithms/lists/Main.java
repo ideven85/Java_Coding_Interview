@@ -54,6 +54,8 @@ public class Main {
         System.out.println(added.val);
         printList(added);
 
+        printList(head);
+
       //  System.out.println(p.isPalindrome(head));
     }
 }
