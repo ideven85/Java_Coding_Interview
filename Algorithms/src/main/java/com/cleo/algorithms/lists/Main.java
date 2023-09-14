@@ -49,12 +49,18 @@ public class Main {
         System.out.println();
         ListNode lst = sortedList.sortList(head);
         printList(lst);
-      */  AddTwoNumbers addTwoNumbers = new AddTwoNumbers();
+        AddTwoNumbers addTwoNumbers = new AddTwoNumbers();
         ListNode added = addTwoNumbers.addTwoNumbers(head,head);
         System.out.println(added.val);
         printList(added);
 
         printList(head);
+
+        */
+        RotateList rotateList = new RotateList();
+        head=rotateList.rotateRight(head,1);
+        printList(head);
+
 
       //  System.out.println(p.isPalindrome(head));
     }

@@ -90,7 +90,7 @@ public class GenerateParenthesis {
             curString.deleteCharAt(curString.length() - 1);
         }
     }
-    public void dfs(List<String> res, int left, int right, String s, int n) {
+    private void dfs(List<String> res, int left, int right, String s, int n) {
         if (s.length() == n * 2) {
             res.add(s);
             return;
@@ -107,9 +107,9 @@ public class GenerateParenthesis {
     public static void main(String[] args) {
         GenerateParenthesis generateParenthesis = new GenerateParenthesis();
         var time = System.nanoTime();
-        generateParenthesis.generateParenthesis(3);
+        System.out.println(generateParenthesis.generateParenthesis(3));
         var time1 = System.nanoTime();
-        generateParenthesis.generateParenthesisV1(3);
+        System.out.println(generateParenthesis.generateParenthesisV1(3));
         var time2 = System.nanoTime();
         System.out.println(time1-time);
         System.out.println(time2-time1);

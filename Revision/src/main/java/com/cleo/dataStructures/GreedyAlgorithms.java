@@ -2,6 +2,8 @@ package com.cleo.dataStructures;
 
 import java.util.Arrays;
 import java.util.Comparator;
+import java.util.LinkedList;
+import java.util.List;
 
 class Activity{
     int start;
@@ -16,7 +18,7 @@ class Activity{
 class ActivityComparator implements Comparator<Activity>{
     @Override
     public int compare(Activity first, Activity second) {
-        return first.finish - second.finish;
+        return first.finish - second.start;
     }
 }
 
@@ -29,21 +31,27 @@ class ActivitySelectionProblem{
      * 2 pointer approach to solve the activity selection problem
      *
      */
-    static int maximumActivities(Activity[] arr, int n){
+    static int maximumActivities(Activity[] activities, int n){
 
-        Arrays.sort(arr, new ActivityComparator());
+        Arrays.sort(activities, new ActivityComparator());
         int res=1;
         int prev=0;
+        int start=activities[0].start;
+        int finish=activities[0].finish;
         //System.out.println(n);
-        for (int i = 1; i < n; i++) {
-            if(arr[i].start>=arr[prev].finish){
-             //   System.out.println("Hi");
+        List<Activity> result = new LinkedList<>();
+        for(Activity activity:activities){
+            if(activity.start<=finish)
+                finish=Math.max(finish, activity.finish);
+            else{
+               result.add(new Activity(start,finish));
+                start=activity.start;
+                finish=activity.finish;
                 res++;
-                prev= i;
-
             }
         }
-        return res;
+        result.add(new Activity(start,finish));
+        return result.size();
     }
     public static int activitySelection(int start[], int end[], int n)
     {
@@ -57,13 +65,15 @@ class ActivitySelectionProblem{
     }
 
     public static void main(String[] args) {
-
+//intervals = [[0,30],[5,10],[15,20]]
         int[] start={5,3};
         int[] end={7,5};
 
-       Activity[] activities = {new Activity(1,3),new Activity(2,4),new Activity(3,5)};
+       Activity[] activities = {new Activity(0,30),new Activity(5,10),new Activity(15,20)};
+       Activity[] meetingRoooms ={new Activity(7,10),new Activity(2,4)};
         System.out.println((maximumActivities(activities,activities.length)));
         System.out.println(activitySelection(start,end,2));
+        System.out.println(maximumActivities(meetingRoooms, meetingRoooms.length));
     }
 }
 
