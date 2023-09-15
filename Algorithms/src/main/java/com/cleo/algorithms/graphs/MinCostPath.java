@@ -1,5 +1,7 @@
 package com.cleo.algorithms.graphs;
 
+import java.util.Arrays;
+
 public class MinCostPath {
     /**
      * //grid = [[1,3,1],[1,5,1],[4,2,1]]
@@ -11,6 +13,7 @@ public class MinCostPath {
         int sum=0,max_sum=0;
 
         int M = cost.length,N = cost[0].length;
+        int min=0;
         // fill the matrix in a bottom-up manner
         for (int i = 0; i < M; i++)
         {
@@ -21,27 +24,35 @@ public class MinCostPath {
                 // fill the first row (there is only one way to reach any cell
                 // in the first row from its adjacent left cell)
                 if (i == 0 && j > 0) {
-                    T[0][j] += T[0][j - 1];
+                    T[0][j] += cost[0][j - 1];
                 }
 
                 // fill the first column (there is only one way to reach any cell
                 // in the first column from its adjacent top cell)
                 else if (j == 0 && i > 0) {
-                    T[i][0] += T[i - 1][0];
+                    T[i][0] += cost[i - 1][0];
                 }
 
                 // fill the rest with the matrix (there are two ways to reach any
                 // cell in the rest of the matrix, from its adjacent
                 // left cell or adjacent top cell)
                 else if (i > 0 && j > 0) {
-                    T[i][j] += Integer.min(T[i - 1][j], T[i][j - 1]);
+                    T[i][j] += Integer.max(T[i - 1][j], T[i][j - 1]);
                 }
+                if(min>T[i][j])
+                    min=T[i][j];
             }
         }
-        return T[M-1][N-1];
+        for(var row:T)
+            System.out.println(Arrays.toString(row));
+
+        return Math.abs(T[M-1][N-1]);
     }
     public static void main(String[] args) {
-        int[][] grid = {{1,3,1},{1,5,1},{4,2,1}};
+        //0 -2 -3 1
+        //-1 4 0 -2
+        //1 -2 -3 0
+        int[][] grid = {{0,-2,-3,1},{-1,4,0,-2},{1,-2,-3,0}};
         MinCostPath minCostPath = new MinCostPath();
         System.out.println(minCostPath.minPathSum(grid));
     }

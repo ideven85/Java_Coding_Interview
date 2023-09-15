@@ -17,7 +17,7 @@ public class MinCostPath {
                     dp[i][j]=input[i][j]+dp[i-1][j];
                 else if(i>0)
 
-                    dp[i][j]=input[i][j]+Math.min(dp[i-1][j],Math.min(dp[i][j-1],dp[i-1][j-1]));
+                    dp[i][j]=input[i][j]+Math.min(dp[i-1][j],dp[i][j-1]);
             }
         }
        /* for(var row:dp)
@@ -30,7 +30,7 @@ public class MinCostPath {
         //3 4 1 2
         //2 1 8 9
         //4 7 8 1
-        int[][] grid = {{3,4,1,2},{2,1,8,9},{4,7,8,1}};
+        int[][] grid ={{0,-2,-3,1},{-1,4,0,-2},{1,-2,-3,0}};
         System.out.println(minCostPath(grid));
     }
 }

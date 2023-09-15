@@ -61,6 +61,23 @@ public class SubsetSum {
         }
         return T[arr.length][sum];
     }
+    static boolean isSubsetPresent(int[] arr, int n, int sum) {
+
+        /* Your class should be named Solution
+         * Don't write main().
+         * Don't read input, it is passed as function argument.
+         * Return output and don't print it.
+         * Taking input and printing output is handled automatically.
+         */
+        boolean[] b = new boolean[sum+1];
+        b[0]=true;
+        for(int el:arr){
+            for (int i = sum; i >el-1; i--) {
+                b[i] |=b[i-el];
+            }
+        }
+        return b[sum];
+    }
 
     public static void main(String args[]) {
         SubsetSum ss = new SubsetSum();
