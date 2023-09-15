@@ -3,6 +3,7 @@ package com.cleo.algorithms.dynamicProgramming;
 import java.util.Arrays;
 
 public class NonConstructibleChange {
+
     public static int nonConstructibleChange(int[] coins) {
         // Write your code here.
         int n =coins.length;
@@ -12,6 +13,7 @@ public class NonConstructibleChange {
             if(coin>sum+1)
                 return sum+1;
             sum+=coin;
+            System.out.print(sum+" ");
         }
         return 1+sum;
     }

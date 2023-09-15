@@ -72,5 +72,6 @@ public class MinStepsToOne {
 
     public static void main(String[] args) {
         System.out.println(countMinStepsToOne(97));
+        System.out.println(minStepsToOne(97));
     }
 }

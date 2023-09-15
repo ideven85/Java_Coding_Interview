@@ -5,11 +5,12 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class MinCountOfSquares {
-    public static int minCount(int n) {
+   /* public static int minCount(int n) {
         //Your code goes here
         if(n<=1)
             return 1;
-      /*  int[] dp = new int[n+1];
+      */
+    /*  int[] dp = new int[n+1];
         dp[0]=1;
         dp[1]=1;
         for (int i = 2; i <=n ; i++) {
@@ -28,6 +29,7 @@ public class MinCountOfSquares {
         }
         System.out.println(Arrays.toString(dp));
         return dp[n];*/
+    /*
         int[] dp = new int[n+1];
        Arrays.fill(dp,-1);
 
@@ -56,7 +58,7 @@ public class MinCountOfSquares {
         return  1 + minAns;
 
     }
-  /*  private static int minCount(int n,Map<Integer,Integer> memo,int count){
+  *//*  private static int minCount(int n,Map<Integer,Integer> memo,int count){
         if(memo.get(n)!=null)
             return count;
         int sqrt=0;
@@ -77,7 +79,22 @@ public class MinCountOfSquares {
         return minCount(n,memo,count);
     }
 */
-    public static void main(String[] args) {
+
+
+    public static int minCount(int n) {
+        if(n==0)
+            return 0;
+        int min=Integer.MAX_VALUE;
+        for (int i = 1; i*i <=n ; i++) {
+            int current=minCount(n-i*i);
+            if(min>current)
+                min=current;
+        }
+        return 1+min;
+
+    }
+
+        public static void main(String[] args) {
         int n=30;
         System.out.println(minCount(41));
     }
