@@ -32,66 +32,6 @@ public class Main {
         return memo.get(n);
     }
 
-    /**
-     * @param nums You are given an integer array nums.
-     *       You want to maximize the number of points you get by performing
-     *       the following operation any number of times:
-     *       Pick any nums[i] and delete it to earn nums[i] points.
-     *       Afterwards, you must delete every element equal to nums[i] - 1 and
-     *       every element equal to nums[i] + 1.
-     *       nums = [2,2,3,3,3,4] Max=9
-     * @return  Return the maximum number of points you can earn by
-     *         applying the above operation some number of times.
-     */
-    public int deleteAndEarn(int[] nums) {
-        /*
-        class Solution:
-    def deleteAndEarn(self, nums: List[int]) -> int:
-        cc=collections.Counter(nums)
-        mx=max(cc)
-        comp=[]
-        for i in range(mx+1):
-            if i in cc:
-                comp.append(cc[i]*i)
-            else:
-                comp.append(0)
-        memo=[-1 for _ in range(mx+1)]
-        def dp(i):
-            if i<0:
-                return 0
-            elif memo[i]>=0:
-                return  memo[i]
-            else:
-                res=max(dp(i-2)+comp[i],dp(i-1))
-                memo[i]=res
-                return res
-        return dp(mx)
-
-         */
-        Arrays.sort(nums);
-        Map<Integer,Integer> map = new HashMap<>();
-        for(int num:nums){
-            map.compute(num,(k,v)->v==null?1:++v);
-        }
-        int n = nums.length;
-        int max = nums[n-1];
-        List<Integer> comp = new ArrayList<>();
-        for (int i = 0; i < max+1; i++) {
-            if(map.get(i)!=null)
-                comp.add(map.get(i)*i);
-            else
-                comp.add(0);
-        }
-        int[] dp = new int[n];
-        //map.forEach((a,b)->b.compareTo(a));
-        dp[n-1]=nums[n-1];
-        for (int i = n-2; i >0 ; i--) {
-
-        }
-        return 0;
-
-
-    }
 
     /**
      * If we sort all the numbers into buckets indexed by these numbers,

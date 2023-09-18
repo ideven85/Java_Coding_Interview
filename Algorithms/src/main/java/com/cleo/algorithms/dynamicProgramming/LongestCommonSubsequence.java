@@ -22,6 +22,7 @@ public class LongestCommonSubsequence {
     }
 
 
+    //AlgoExpert Code
     public static List<Character> longestCommonSubsequence(String str1, String str2) {
         int[][][] lcs = new int[str2.length()+1][str1.length()+1][];
         int n = str2.length(),m=str1.length();
@@ -66,6 +67,7 @@ public class LongestCommonSubsequence {
         return sequence;
 
     }
+    //My revision to above
     public static List<Character> longestCommonSubsequenceV2(String str1, String str2) {
         int n = str1.length();
         int m = str2.length();
@@ -87,7 +89,8 @@ public class LongestCommonSubsequence {
             else if(dp[i][j]==dp[i][j-1])
                 j--;
             else{
-                sequence.add(0,(char)str1.charAt(i-1));
+                sequence.add(0,(char)str1.charAt(i-1));//Coz we only increase when characters are same otherwise
+                //we put max
                 i--;
                 j--;
             }
