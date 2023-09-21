@@ -28,7 +28,7 @@ public class CourseSchedule {
                 queue.add(i);
         }
         int count = 0;
-        boolean[] visited = new boolean[numCourses];
+       // boolean[] visited = new boolean[numCourses];
         while(!queue.isEmpty()){
             int current = queue.poll();
 
