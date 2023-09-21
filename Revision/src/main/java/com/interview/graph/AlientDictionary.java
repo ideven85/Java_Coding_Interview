@@ -58,7 +58,7 @@ public class AlientDictionary {
     private Map<Character, Set<Character>> buildGraph(String words[], Map<Character, Integer> degree, Set<Character> allCharacters) {
         getAllChars(words, degree, allCharacters);
         Set<Character> all = new HashSet<>(allCharacters);
-        Map<Character, Set<Character>> graph = new HashMap<>();
+        Map<Character, Set<Character>> graph = new LinkedHashMap<>();
         for (int i = 0; i < words.length - 1; i++) {
             String nextWord = words[i + 1];
             for (int k = 0; k < Math.min(words[i].length(), nextWord.length()); k++) {
@@ -91,7 +91,7 @@ public class AlientDictionary {
     }
 
     public String alienOrder1(String words[]) {
-        Map<Character, Integer> degree = new HashMap<>();
+        Map<Character, Integer> degree = new LinkedHashMap<>();
         Map<Character, Set<Character>> graph = buildGraph(words, degree, new HashSet<>());
 
         Queue<Character> zeroDegreeNodes = new LinkedList<>();
@@ -120,17 +120,30 @@ public class AlientDictionary {
             }
             graph.remove(vertex);
         }
+       /* for(var m:graph.entrySet()){
+            System.out.println(m.getKey()+":"+m.getValue());
+        }*/
+       /*int max=0;
+        System.out.println(degree.size());
+        for(var m:degree.entrySet()){
+            if(max<=m.getValue())
+                max=m.getValue();
+        }
+        if(max==0)
+            return "";*/
 
         return graph.size() > 0 ? "" : result.toString();
     }
 
     public static void main(String args[]) {
         AlientDictionary ad =  new AlientDictionary();
-        String[] words1 = {"zy","zx"};
-        String[] words = {"wrt", "wrf", "er", "ett", "rftt"};
-        String[] words2 = {"wrtkj","wrt"};
+        String[] words1 = {"z","x"};
+        String[] words = {"abc","ab"};
+        String[] words2 = {"wrt","wrf","er","ett","rftt"};
         String result = ad.alienOrder1(words2);
-        System.out.print(result);
+        System.out.println(result);
+        System.out.println(ad.alienOrder1(words));
+        System.out.println(ad.alienOrder1(words1));
 
 
         //w -> e
