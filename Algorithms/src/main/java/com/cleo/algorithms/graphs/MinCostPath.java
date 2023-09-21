@@ -2,10 +2,11 @@ package com.cleo.algorithms.graphs;
 
 import java.util.Arrays;
 
+
 public class MinCostPath {
     /**
      * //grid = [[1,3,1],[1,5,1],[4,2,1]]
-     * @param grid Given a graph, where we can move down or right
+     * @param cost Given a graph, where we can move down or right
      * @return the path with minimum sum from source to destination
      */
     public int minPathSum(int[][] cost) {

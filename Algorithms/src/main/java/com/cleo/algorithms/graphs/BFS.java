@@ -6,7 +6,8 @@ import java.util.List;
 import java.util.Queue;
 
 /**
- * In Graph theory, the primary use cases of the “breadth-first search” (“BFS”) algorithm are:
+ * In Graph theory, the primary use cases of the “breadth-first search”
+ * (“BFS”) algorithm are:
  *
  * Traversing all vertices in the “graph”;
  * Finding the shortest path between two vertices in a graph

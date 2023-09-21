@@ -41,6 +41,11 @@ public class MinCostToConnectAllAirPorts {
             this.isReachable = true;
             this.unReachableNodes = new ArrayList<>();
         }
+
+        @Override
+        public String toString() {
+            return airPortName;
+        }
     }
    static Map<String,AirPortNode> airPortNodeGraph = new HashMap<>();
 
@@ -50,10 +55,11 @@ public class MinCostToConnectAllAirPorts {
         for(String airPort:airports){
           airPortNodeGraph.put(airPort,new AirPortNode(airPort));
         }
-        for(var route:routes){
+        /*for(var route:routes){
             airPortNodeGraph.get(route.get(0)).connectedAirPorts.add(route.get(1));
 
-        }
+        }*/
+
         List<AirPortNode> unReachableNodes = getUnReachableNodes(airports,startingAirport);
 
         markUnReachableNodes(unReachableNodes);
@@ -114,10 +120,11 @@ public class MinCostToConnectAllAirPorts {
 
     public static int getMinimumConnections(List<AirPortNode> airPortNodes){
         airPortNodes.sort((a,b)->b.unReachableNodes.size()-a.unReachableNodes.size());
+        System.out.println(airPortNodes+" "+airPortNodes.size());
         int count = 0;
         for(var node:airPortNodes){
             if(node.isReachable)
-                continue;
+                continue;//Visited Set
             count++;
             for(String connections: node.unReachableNodes)
                 airPortNodeGraph.get(connections).isReachable=true;
@@ -130,7 +137,6 @@ public class MinCostToConnectAllAirPorts {
         List<List<String>> routes = List.of(
                 List.of("DSM", "ORD"),
                 List.of("ORD", "BGI"),
-                List.of("BGI", "LGA"),
                 List.of("SIN", "CDG"),
                 List.of("CDG", "SIN"),
                 List.of("CDG", "BUD"),
@@ -141,7 +147,6 @@ public class MinCostToConnectAllAirPorts {
                 List.of("HND", "ICN"),
                 List.of("HND", "JFK"),
                 List.of("ICN", "JFK"),
-                List.of("JFK", "LGA"),
                 List.of("EYW", "LHR"),
                 List.of("LHR", "SFO"),
                 List.of("SFO", "SAN"),
@@ -150,5 +155,6 @@ public class MinCostToConnectAllAirPorts {
         );
         System.out.println(airportConnections(airports,routes,"LGA"));
         //Phew
+        //Output=3
     }
 }

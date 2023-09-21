@@ -13,11 +13,11 @@ class CheapestFlight {
     int output = Integer.MAX_VALUE;
     public int findCheapestPrice(int n, int[][] flights, int src, int dst, int k) {
         Map<Integer, List<Node>> srcDestGraph = new HashMap<>();
-        for (int i = 0; i < flights.length; i++) {
-            int source = flights[i][0];
+        for (int[] flight : flights) {
+            int source = flight[0];
             Node x = new Node();
-            x.city = flights[i][1];
-            x.cost = flights[i][2];
+            x.city = flight[1];
+            x.cost = flight[2];
             List<Node> flightDetails = srcDestGraph.getOrDefault(source, new ArrayList<>());
             flightDetails.add(x);
             srcDestGraph.put(source, flightDetails);

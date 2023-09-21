@@ -1,7 +1,6 @@
 package com.cleo.revision.asynchannels;
 
 import lombok.extern.slf4j.Slf4j;
-import nu.pattern.OpenCV;
 
 import java.net.InetSocketAddress;
 import java.nio.ByteBuffer;
