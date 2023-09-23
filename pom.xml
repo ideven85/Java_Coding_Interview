@@ -9,7 +9,7 @@
     <name>Java_Coding_Problems</name>
 
     <groupId>com.cleo</groupId>
-    <artifactId>Core_Java</artifactId>
+    <artifactId>Java_Coding_Interview</artifactId>
     <version>1.0-SNAPSHOT</version>
     <packaging>pom</packaging>
 
