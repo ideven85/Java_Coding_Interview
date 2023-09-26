@@ -206,9 +206,9 @@ class SolutionAlmostMine {
 
     private List<int[]> getNeighbours(int row, int col, int[][] grid) {
         List<int[]> neighbours = new ArrayList<>();
-        for (int i = 0; i < directions.length; i++) {
-            int newRow = row + directions[i][0];
-            int newCol = col + directions[i][1];
+        for (int[] direction : directions) {
+            int newRow = row + direction[0];
+            int newCol = col + direction[1];
             if (newRow < 0 || newCol < 0 || newRow >= grid.length
                     || newCol >= grid[0].length
                     || grid[newRow][newCol] != 0) {

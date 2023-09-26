@@ -50,7 +50,7 @@ public class LargestNumber {
     public static void main(String[] args) {
         LargestNumber l = new LargestNumber();
         int[] nums = new int[]{10,2};
-        int[] nums1 = new int[]{9,5,3,34,30};
+        int[] nums1 = new int[]{9,5,3,34,30,321};
 
         int value = (int)Math.pow(10,9);
         System.out.println(l.largestNumber(nums));
