@@ -1,11 +1,10 @@
 package com.cleo.revision.modernJava.ch02;
 
-import lombok.extern.slf4j.Slf4j;
 
 import java.util.Arrays;
 import java.util.Comparator;
 
-@Slf4j
+
 public class Sorting {
 
     public static void main(String[] args) {
@@ -27,7 +26,6 @@ public class Sorting {
         apples.set(1,new FilteringApples.Apple(80, FilteringApples.Color.RED));
         apples.sort(Comparator.comparing(FilteringApples.Apple::getWeight));
         System.out.println(apples);
-        log.info(apples+" Apples where will I be logged?");
 
     }
 

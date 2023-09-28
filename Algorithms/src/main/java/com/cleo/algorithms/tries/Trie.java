@@ -1,6 +1,5 @@
 package com.cleo.algorithms.tries;
 
-import lombok.Getter;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -24,7 +23,10 @@ public class Trie {
 
     private final TrieNode root;
 
-    @Getter
+    public int getCount() {
+        return count;
+    }
+
     private int count;
     public Trie() {
         root = new TrieNode('\0');

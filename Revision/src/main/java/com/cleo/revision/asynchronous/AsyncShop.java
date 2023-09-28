@@ -18,7 +18,7 @@ public class AsyncShop {
 
     public AsyncShop(String name) {
         this.name = name;
-        this.random = new Random(name.charAt(0)*name.charAt(1)*name.charAt(2));
+        this.random = new Random((long) name.charAt(0) *name.charAt(1)*name.charAt(2));
     }
 
     public Future<Double> getPrice(String product){

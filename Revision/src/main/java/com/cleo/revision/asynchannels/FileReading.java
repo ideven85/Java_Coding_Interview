@@ -2,7 +2,6 @@ package com.cleo.revision.asynchannels;
 
 
 
-import lombok.extern.slf4j.Slf4j;
 
 import java.io.*;
 import java.nio.file.Paths;
@@ -11,7 +10,7 @@ import java.util.zip.ZipEntry;
 import java.util.zip.ZipOutputStream;
 
 
-@Slf4j
+
 public class FileReading {
 
     public static void main(String[] args) {
@@ -28,7 +27,6 @@ public class FileReading {
                     zip.write(bytes,0,length);
 
                 }
-                log.info("File zipped with name: "+   zipEntry.getName());
             }
 
             BufferedReader br = new BufferedReader(new FileReader(path));

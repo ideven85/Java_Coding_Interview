@@ -1,12 +1,11 @@
 package com.cleo.revision.modernJava;
 
-import lombok.extern.slf4j.Slf4j;
 
 import java.io.File;
 import java.io.FileFilter;
 import java.util.List;
 
-@Slf4j
+
 public class Files {
 
     //Making du-ak

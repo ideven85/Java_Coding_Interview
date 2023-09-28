@@ -1,6 +1,5 @@
 package com.cleo.revision.asynchannels;
 
-import lombok.extern.slf4j.Slf4j;
 
 import java.net.InetSocketAddress;
 import java.nio.ByteBuffer;
@@ -11,7 +10,7 @@ import java.nio.channels.SocketChannel;
 import java.util.Arrays;
 import java.util.Set;
 
-@Slf4j
+
 public class CleoServerChannel {
 
 

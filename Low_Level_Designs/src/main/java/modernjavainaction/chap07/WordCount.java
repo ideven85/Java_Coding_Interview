@@ -1,6 +1,11 @@
 package modernjavainaction.chap07;
 
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.InputStreamReader;
 import java.util.Spliterator;
+import java.util.StringTokenizer;
 import java.util.function.Consumer;
 import java.util.stream.Stream;
 import java.util.stream.StreamSupport;
@@ -12,7 +17,9 @@ public class WordCount {
       + "mi  ritrovai in una  selva oscura"
       + " che la  dritta via era   smarrita ";
 
+  private static String FILE=WordCount.class.getResource("./rural.txt").getFile();
   public static void main(String[] args) {
+
     System.out.println("Found " + countWordsIteratively(SENTENCE) + " words");
     System.out.println("Found " + countWords(SENTENCE) + " words");
   }
@@ -44,7 +51,8 @@ public class WordCount {
   }
 
   private static int countWords(Stream<Character> stream) {
-    WordCounter wordCounter = stream.reduce(new WordCounter(0, true), WordCounter::accumulate, WordCounter::combine);
+    WordCounter wordCounter = stream.reduce(new WordCounter(0, true),
+            WordCounter::accumulate, WordCounter::combine);
     return wordCounter.getCounter();
   }
 
@@ -119,5 +127,28 @@ public class WordCount {
     }
 
   }
+  static class InputReader {
+    public BufferedReader reader;
+    public StringTokenizer tokenizer;
 
+    public InputReader(InputStream stream) {
+      reader = new BufferedReader(new InputStreamReader(stream), 32768);
+      tokenizer = null;
+    }
+
+    public String next() {
+      while (tokenizer == null || !tokenizer.hasMoreTokens()) {
+        try {
+          tokenizer = new StringTokenizer(reader.readLine());
+        } catch (IOException e) {
+          throw new RuntimeException(e);
+        }
+      }
+      return tokenizer.nextToken();
+    }
+
+    public int nextInt() {
+      return Integer.parseInt(next());
+    }
+  }
 }

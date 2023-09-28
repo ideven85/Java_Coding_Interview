@@ -1,6 +1,6 @@
 package com.cleo.interview_preparation;
 
-import lombok.extern.slf4j.Slf4j;
+
 
 import java.math.BigDecimal;
 import java.math.RoundingMode;
@@ -9,7 +9,7 @@ import java.util.concurrent.ThreadLocalRandom;
 import java.util.stream.Collectors;
 import java.util.stream.LongStream;
 
-@Slf4j
+
 public class Price {
 
     private String currency;

@@ -1,6 +1,5 @@
 package com.cleo.algorithms.heaps;
 
-import lombok.Getter;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -95,7 +94,10 @@ class MedianFinder {
 // properties and methods to the class.
 class Program {
     static class ContinuousMedianHandler {
-        @Getter
+        public double getMedian() {
+            return median;
+        }
+
         double median = 0;
         List<Integer> heap = new ArrayList<>();
 

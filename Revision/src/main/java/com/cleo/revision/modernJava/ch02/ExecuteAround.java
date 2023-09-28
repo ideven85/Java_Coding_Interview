@@ -1,15 +1,11 @@
 package com.cleo.revision.modernJava.ch02;
 
-import lombok.Data;
-import lombok.extern.slf4j.Slf4j;
-
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
 
 
-@Data
-@Slf4j(topic = "")
+
 public class ExecuteAround {
 
     private static final String FILE = "src/main/resources/data.txt";

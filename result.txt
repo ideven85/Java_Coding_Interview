@@ -1,0 +1,195 @@
+# JMH version: 1.36
+# VM version: JDK 19.0.1, OpenJDK 64-Bit Server VM, 19.0.1+10-21
+# VM invoker: /Library/Java/JavaVirtualMachines/jdk-19.0.1.jdk/Contents/Home/bin/java
+# VM options: -Xms4G -Xmx4G
+# Blackhole mode: compiler (auto-detected, use -Djmh.blackhole.autoDetect=false to disable)
+# Warmup: 3 iterations, 10 s each
+# Measurement: 2 iterations, 10 s each
+# Timeout: 10 min per iteration
+# Threads: 1 thread, will synchronize iterations
+# Benchmark mode: Average time, time/op
+# Benchmark: modernjavainaction.chap07.ParallelStreamBenchmark.iterativeSum
+
+# Run progress: 0.00% complete, ETA 00:08:20
+# Fork: 1 of 2
+# Warmup Iteration   1: 3.148 ms/op
+# Warmup Iteration   2: 3.370 ms/op
+# Warmup Iteration   3: 3.431 ms/op
+Iteration   1: 3.433 ms/op
+Iteration   2: 3.501 ms/op
+
+# Run progress: 10.00% complete, ETA 00:07:31
+# Fork: 2 of 2
+# Warmup Iteration   1: 3.277 ms/op
+# Warmup Iteration   2: 3.311 ms/op
+# Warmup Iteration   3: 3.149 ms/op
+Iteration   1: 3.136 ms/op
+Iteration   2: 3.172 ms/op
+
+
+Result "modernjavainaction.chap07.ParallelStreamBenchmark.iterativeSum":
+  3.311 ±(99.9%) 1.186 ms/op [Average]
+  (min, avg, max) = (3.136, 3.311, 3.501), stdev = 0.184
+  CI (99.9%): [2.124, 4.497] (assumes normal distribution)
+
+
+# JMH version: 1.36
+# VM version: JDK 19.0.1, OpenJDK 64-Bit Server VM, 19.0.1+10-21
+# VM invoker: /Library/Java/JavaVirtualMachines/jdk-19.0.1.jdk/Contents/Home/bin/java
+# VM options: -Xms4G -Xmx4G
+# Blackhole mode: compiler (auto-detected, use -Djmh.blackhole.autoDetect=false to disable)
+# Warmup: 3 iterations, 10 s each
+# Measurement: 2 iterations, 10 s each
+# Timeout: 10 min per iteration
+# Threads: 1 thread, will synchronize iterations
+# Benchmark mode: Average time, time/op
+# Benchmark: modernjavainaction.chap07.ParallelStreamBenchmark.parallelRangedSum
+
+# Run progress: 20.00% complete, ETA 00:06:41
+# Fork: 1 of 2
+# Warmup Iteration   1: 0.535 ms/op
+# Warmup Iteration   2: 0.500 ms/op
+# Warmup Iteration   3: 0.523 ms/op
+Iteration   1: 0.470 ms/op
+Iteration   2: 0.482 ms/op
+
+# Run progress: 30.00% complete, ETA 00:05:51
+# Fork: 2 of 2
+# Warmup Iteration   1: 0.477 ms/op
+# Warmup Iteration   2: 0.464 ms/op
+# Warmup Iteration   3: 0.506 ms/op
+Iteration   1: 0.487 ms/op
+Iteration   2: 0.464 ms/op
+
+
+Result "modernjavainaction.chap07.ParallelStreamBenchmark.parallelRangedSum":
+  0.476 ±(99.9%) 0.068 ms/op [Average]
+  (min, avg, max) = (0.464, 0.476, 0.487), stdev = 0.011
+  CI (99.9%): [0.407, 0.544] (assumes normal distribution)
+
+
+# JMH version: 1.36
+# VM version: JDK 19.0.1, OpenJDK 64-Bit Server VM, 19.0.1+10-21
+# VM invoker: /Library/Java/JavaVirtualMachines/jdk-19.0.1.jdk/Contents/Home/bin/java
+# VM options: -Xms4G -Xmx4G
+# Blackhole mode: compiler (auto-detected, use -Djmh.blackhole.autoDetect=false to disable)
+# Warmup: 3 iterations, 10 s each
+# Measurement: 2 iterations, 10 s each
+# Timeout: 10 min per iteration
+# Threads: 1 thread, will synchronize iterations
+# Benchmark mode: Average time, time/op
+# Benchmark: modernjavainaction.chap07.ParallelStreamBenchmark.parallelSum
+
+# Run progress: 40.00% complete, ETA 00:05:01
+# Fork: 1 of 2
+# Warmup Iteration   1: 43.792 ms/op
+# Warmup Iteration   2: 41.983 ms/op
+# Warmup Iteration   3: 43.146 ms/op
+Iteration   1: 42.643 ms/op
+Iteration   2: 42.545 ms/op
+
+# Run progress: 50.00% complete, ETA 00:04:11
+# Fork: 2 of 2
+# Warmup Iteration   1: 43.814 ms/op
+# Warmup Iteration   2: 42.516 ms/op
+# Warmup Iteration   3: 41.897 ms/op
+Iteration   1: 42.472 ms/op
+Iteration   2: 42.016 ms/op
+
+
+Result "modernjavainaction.chap07.ParallelStreamBenchmark.parallelSum":
+  42.419 ±(99.9%) 1.796 ms/op [Average]
+  (min, avg, max) = (42.016, 42.419, 42.643), stdev = 0.278
+  CI (99.9%): [40.623, 44.215] (assumes normal distribution)
+
+
+# JMH version: 1.36
+# VM version: JDK 19.0.1, OpenJDK 64-Bit Server VM, 19.0.1+10-21
+# VM invoker: /Library/Java/JavaVirtualMachines/jdk-19.0.1.jdk/Contents/Home/bin/java
+# VM options: -Xms4G -Xmx4G
+# Blackhole mode: compiler (auto-detected, use -Djmh.blackhole.autoDetect=false to disable)
+# Warmup: 3 iterations, 10 s each
+# Measurement: 2 iterations, 10 s each
+# Timeout: 10 min per iteration
+# Threads: 1 thread, will synchronize iterations
+# Benchmark mode: Average time, time/op
+# Benchmark: modernjavainaction.chap07.ParallelStreamBenchmark.rangedSum
+
+# Run progress: 60.00% complete, ETA 00:03:21
+# Fork: 1 of 2
+# Warmup Iteration   1: 3.258 ms/op
+# Warmup Iteration   2: 3.247 ms/op
+# Warmup Iteration   3: 3.241 ms/op
+Iteration   1: 3.289 ms/op
+Iteration   2: 3.294 ms/op
+
+# Run progress: 70.00% complete, ETA 00:02:30
+# Fork: 2 of 2
+# Warmup Iteration   1: 3.253 ms/op
+# Warmup Iteration   2: 3.322 ms/op
+# Warmup Iteration   3: 3.211 ms/op
+Iteration   1: 3.387 ms/op
+Iteration   2: 3.402 ms/op
+
+
+Result "modernjavainaction.chap07.ParallelStreamBenchmark.rangedSum":
+  3.343 ±(99.9%) 0.386 ms/op [Average]
+  (min, avg, max) = (3.289, 3.343, 3.402), stdev = 0.060
+  CI (99.9%): [2.957, 3.729] (assumes normal distribution)
+
+
+# JMH version: 1.36
+# VM version: JDK 19.0.1, OpenJDK 64-Bit Server VM, 19.0.1+10-21
+# VM invoker: /Library/Java/JavaVirtualMachines/jdk-19.0.1.jdk/Contents/Home/bin/java
+# VM options: -Xms4G -Xmx4G
+# Blackhole mode: compiler (auto-detected, use -Djmh.blackhole.autoDetect=false to disable)
+# Warmup: 3 iterations, 10 s each
+# Measurement: 2 iterations, 10 s each
+# Timeout: 10 min per iteration
+# Threads: 1 thread, will synchronize iterations
+# Benchmark mode: Average time, time/op
+# Benchmark: modernjavainaction.chap07.ParallelStreamBenchmark.sequentialSum
+
+# Run progress: 80.00% complete, ETA 00:01:40
+# Fork: 1 of 2
+# Warmup Iteration   1: 53.427 ms/op
+# Warmup Iteration   2: 53.800 ms/op
+# Warmup Iteration   3: 52.286 ms/op
+Iteration   1: 52.058 ms/op
+Iteration   2: 53.208 ms/op
+
+# Run progress: 90.00% complete, ETA 00:00:50
+# Fork: 2 of 2
+# Warmup Iteration   1: 52.956 ms/op
+# Warmup Iteration   2: 51.810 ms/op
+# Warmup Iteration   3: 50.722 ms/op
+Iteration   1: 51.122 ms/op
+Iteration   2: 51.125 ms/op
+
+
+Result "modernjavainaction.chap07.ParallelStreamBenchmark.sequentialSum":
+  51.878 ±(99.9%) 6.395 ms/op [Average]
+  (min, avg, max) = (51.122, 51.878, 53.208), stdev = 0.990
+  CI (99.9%): [45.484, 58.273] (assumes normal distribution)
+
+
+# Run complete. Total time: 00:08:22
+
+REMEMBER: The numbers below are just data. To gain reusable insights, you need to follow up on
+why the numbers are the way they are. Use profilers (see -prof, -lprof), design factorial
+experiments, perform baseline and negative tests that provide experimental control, make sure
+the benchmarking environment is safe on JVM/OS/HW level, ask for reviews from the domain experts.
+Do not assume the numbers tell you what you want them to tell.
+
+NOTE: Current JVM experimentally supports Compiler Blackholes, and they are in use. Please exercise
+extra caution when trusting the results, look into the generated code to check the benchmark still
+works, and factor in a small probability of new VM bugs. Additionally, while comparisons between
+different JVMs are already problematic, the performance difference caused by different Blackhole
+modes can be very significant. Please make sure you use the consistent Blackhole mode for comparisons.
+
+Benchmark                                  Mode  Cnt   Score   Error  Units
+ParallelStreamBenchmark.iterativeSum       avgt    4   3.311 ± 1.186  ms/op
+ParallelStreamBenchmark.parallelRangedSum  avgt    4   0.476 ± 0.068  ms/op
+ParallelStreamBenchmark.parallelSum        avgt    4  42.419 ± 1.796  ms/op
+ParallelStreamBenchmark.rangedSum          avgt    4   3.343 ± 0.386  ms/op
+ParallelStreamBenchmark.sequentialSum      avgt    4  51.878 ± 6.395  ms/op

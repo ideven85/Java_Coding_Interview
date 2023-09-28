@@ -27,6 +27,7 @@
         <module>Coding_Challenges</module>
         <module>NotePad</module>
         <module>Tetris</module>
+        <module>Modern_Java</module>
     </modules>
     <properties>
         <maven.compiler.source>19</maven.compiler.source>
@@ -126,23 +127,7 @@
             </dependency>
 
 
-        <dependency>
-            <groupId>org.slf4j</groupId>
-            <artifactId>slf4j-api</artifactId>
-            <version>2.0.5</version>
-        </dependency>
 
-        <dependency>
-            <groupId>ch.qos.logback</groupId>
-            <artifactId>logback-core</artifactId>
-            <version>1.4.5</version>
-        </dependency>
-        <dependency>
-            <groupId>org.projectlombok</groupId>
-            <artifactId>lombok</artifactId>
-            <version>1.18.24</version>
-            <scope>provided</scope>
-        </dependency>
         </dependencies>
     <build>
 

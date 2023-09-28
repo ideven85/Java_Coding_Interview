@@ -6,7 +6,7 @@ import java.io.IOException;
 
 public class ExecuteAround {
 
-  private static final String FILE = ExecuteAround.class.getResource("./data.txt").getFile();
+  private static final String FILE = ExecuteAround.class.getResource("./rural.txt").getFile();
 
   public static void main(String... args) throws IOException {
     // method we want to refactor to make more flexible
