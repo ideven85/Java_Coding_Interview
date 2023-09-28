@@ -26,6 +26,7 @@
         <module>Low_Level_Designs</module>
         <module>Coding_Challenges</module>
         <module>NotePad</module>
+        <module>Tetris</module>
     </modules>
     <properties>
         <maven.compiler.source>19</maven.compiler.source>

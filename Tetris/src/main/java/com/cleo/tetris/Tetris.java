@@ -1,4 +1,4 @@
-package com.cleo.algorithms.tetris;
+package com.cleo.tetris;
 
 import java.awt.BorderLayout;
 import java.awt.EventQueue;
