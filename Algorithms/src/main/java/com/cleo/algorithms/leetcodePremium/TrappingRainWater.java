@@ -5,6 +5,8 @@ Output: 6
 Explanation: The above elevation map (black section) is represented by array [0,1,0,2,1,0,1,3,2,1,2,1]. In this case, 6 units of rain water (blue section) are being trapped.
  */
 
+import java.util.Arrays;
+
 class TrappingRainWater {
     public static int trap(int[] height) {
 
@@ -14,14 +16,15 @@ class TrappingRainWater {
         int totalWaterSaved = 0;
         //1. fill up the left and right max height of the index
         computeIndexLeftAndMaxHeight(leftMaxHeight, rightMaxHeight, height);
-
-
+        System.out.println(Arrays.toString(leftMaxHeight));
+        System.out.println(Arrays.toString(rightMaxHeight));
+        System.out.println(Arrays.toString(height));
         for(int i=0; i<height.length; i++) {
 
             int leftMax = leftMaxHeight[i];
             int rightMax = rightMaxHeight[i];
             int minHeight = Math.min(leftMax,rightMax);
-            totalWaterSaved = totalWaterSaved + (minHeight-height[i] <= 0 ? 0 : minHeight-height[i]);
+            totalWaterSaved = totalWaterSaved + (Math.max(minHeight - height[i], 0));
         }
 
         return totalWaterSaved;
@@ -41,6 +44,7 @@ class TrappingRainWater {
             if(leftMax < height[i])
                 leftMax = height[i];
         }
+      //  System.out.println(Arrays.toString(leftMaxHeight));
 
         //filling right heights
         rightMaxHeight[height.length-1] = 0;
@@ -55,7 +59,7 @@ class TrappingRainWater {
     }
 
     public static void main(String args[]) {
-        int[] arr= new int[]{4,2,0,3,2,5};
+        int[] arr= new int[]{0, 8, 0, 0, 5, 0, 0, 10, 0, 0, 1, 1, 0, 3};
         System.out.println(trap(arr));
     }
 

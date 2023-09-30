@@ -2,6 +2,45 @@ package com.cleo.algorithms.dynamicProgramming;
 
 import java.util.*;
 class Solution1 {
+
+  private final   Map<Integer,Integer> map = new HashMap<>();
+  private final Map<Integer,Integer> cache = new HashMap<>();
+
+    private int maxPoints(int number){
+        if(number==0)
+            return 0;
+        if(number==1)
+            return map.getOrDefault(1,0);
+        if(cache.containsKey(number))
+            return cache.get(number);
+
+        int gain = map.getOrDefault(number,0);
+
+        cache.put(number,Math.max(gain+maxPoints(number-2),maxPoints(number-1)));
+        return cache.get(number);
+
+    }
+    public int deleteAndEarn(int[] nums) {
+     //   Arrays.sort(nums);
+        int maxNumber=0;
+        for(int num:nums) {
+            map.put(num, map.getOrDefault(num, 0) + num);
+            if(maxNumber<num)
+                maxNumber=num;
+        }
+
+      return   maxPoints(maxNumber);
+
+
+
+
+    }
+
+    public static void main(String[] args) {
+        Solution1 solution1 = new Solution1();
+        int[] nums = {2,2,3,3,3,4};
+        System.out.println(solution1.deleteAndEarn(nums));
+    }
 }
 class DeleteAndEarnSlower{
     private final HashMap<Integer, Integer> points = new HashMap<>();

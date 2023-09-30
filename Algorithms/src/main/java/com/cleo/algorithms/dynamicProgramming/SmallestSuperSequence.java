@@ -13,4 +13,10 @@ public class SmallestSuperSequence {
         int[][] dp=new int[n][m];
         return 1;
     }
+
+    public static void main(String[] args) {
+        String s1 = "abc";
+        String s2 = "abd";
+
+    }
 }

@@ -58,6 +58,7 @@ public class ReadingFiles {
         System.out.println("run: " + name);
         long startTime = System.nanoTime();
         List<String> l = fn.apply(path);
+
         System.out.println(l.size());
         long estimatedTime = System.nanoTime() - startTime;
         System.out.println("lines: " + l.size());
@@ -119,10 +120,12 @@ public class ReadingFiles {
     }
 
     private static List<String> scannerLinkedList(String path) {
+
         return scanner(path, new LinkedList<>());
     }
 
     private static List<String> scannerArrayList(String path) {
+
         return scanner(path, new ArrayList<>());
     }
 

@@ -16,7 +16,7 @@ public class HouseRobber {
             return Math.max(nums[0],nums[1]);
         else if(!memo.containsKey(n))
             memo.put(n,Math.max(dp(n-1),nums[n-2]+dp(n-2)));
-            return memo.get(n);
+        return memo.get(n);
     }
     public  int rob(int[] nums) {
         /*int previous=0,current=0;

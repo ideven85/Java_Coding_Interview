@@ -16,6 +16,12 @@ public class Main {
         }
         System.out.println();
     }
+    private static int length(ListNode head){
+        if(head==null)
+            return 0;
+
+        return 1+length(head.next);
+    }
     public static void main(String[] args) {
         ListNode head = new ListNode(1);
         ListNode current=head;
@@ -57,10 +63,22 @@ public class Main {
         printList(head);
 
         */
-        RotateList rotateList = new RotateList();
-        head=rotateList.rotateRight(head,1);
+          DeleteValue deleteValue = new DeleteValue();
+        head=deleteValue.removeElements(head,1);
         printList(head);
-
+        SortList sortedList = new SortList();
+        printList(head);
+        System.out.println("Pinkie Boy");
+        ListNode lst = sortedList.sortList(head);
+        printList(lst);
+        RotateList rotateList = new RotateList();
+        head=rotateList.rotateRight(head,6);
+        System.out.print("Printing List rotated right by 6:");
+        printList(head);
+        AddTwoNumbers addTwoNumbers = new AddTwoNumbers();
+        ListNode added = addTwoNumbers.addTwoNumbers(head,lst);
+        System.out.println("Length of list after adding the two lists:"+length(added));
+        printList(added);
 
       //  System.out.println(p.isPalindrome(head));
     }
