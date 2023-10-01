@@ -14,6 +14,11 @@ public class Revision {
 
     }
 
+    public int maximumScore(int[] nums, int[] multipliers) {
+
+        return -1;
+    }
+
     public static void main(String[] args) {
         System.out.println(climbStairs(10));
     }

@@ -1,7 +1,8 @@
 package com.cleo.algorithms.dynamicProgramming;
 
 import java.util.*;
-
+//LeetCode Hard Problem
+//https://leetcode.com/problems/maximum-score-from-performing-multiplication-operations/
 public class MatrixMultiplications {
     public static int maximumScore(int[] nums, int[] multipliers) {
 
@@ -30,7 +31,8 @@ public class MatrixMultiplications {
     private int[] nums,multipliers;
     private int n,m;
 
-    private int dp(int i, int left){
+
+        private int dp(int i, int left){
         if(i==m)
             return 0;
         int mult=multipliers[i];
