@@ -1,10 +1,9 @@
 package com.cleo.graphs;
 
-import java.util.LinkedList;
-import java.util.Queue;
-import java.util.Scanner;
+import java.util.*;
 
 public class Graphs {
+
 
     public static void dftraversal(int adjMatrix[][], int currentVertex, boolean visited[]){
         visited[currentVertex] = true;
@@ -18,6 +17,15 @@ public class Graphs {
     }
 
 
+    public static void dftraversal(int adjMatrix[][]){
+        boolean visited[]= new boolean[adjMatrix. length];
+        for(int i=0;i<adjMatrix.length;i++) {
+            if( !visited[i]) {
+                dftraversal(adjMatrix,i,visited);
+                System.out.println();
+            }
+        }
+    }
 
 
 
@@ -41,13 +49,44 @@ public class Graphs {
         }
     }
 
+    public static ArrayList<Integer> getPathBFS(int adjMatrix[][], int s, int e){
+        Queue<Integer> pendingVertices = new LinkedList<>();
+        HashMap<Integer, Integer> map = new HashMap<>();
+        boolean visited[] = new boolean[adjMatrix.length];
+        visited[s] = true;
+        pendingVertices.add(s);
+        map.put(s, -1);
+        boolean pathFound = false;
 
-    public static void dftraversal(int adjMatrix[][]){
-        boolean visited[]= new boolean[adjMatrix. length];
-
-        dftraversal(adjMatrix, 0, visited);
+        while(!pendingVertices.isEmpty()){
+            int currentVertex = pendingVertices.poll();
+            for(int i = 0; i < adjMatrix.length; i++){
+                if(adjMatrix[currentVertex][i] == 1 && !visited[i]){
+                    pendingVertices.add(i);
+                    visited[i] = true;
+                    map.put(i, currentVertex);
+                    if(i == e) {
+// Path found
+                        pathFound = true;
+                        break;
+                    }
+                }
+            }
+        }
+        if(pathFound){
+            ArrayList<Integer> path = new ArrayList<>();
+            int currentVertex = e;
+            while( currentVertex != -1){
+                path.add(currentVertex);
+                int parent = map.get(currentVertex);
+                currentVertex = parent;
+            }
+            path.add(s);
+            return path;
+        }else{
+            return null;
+        }
     }
-
 
     public static void main(String[] args) {
         Scanner s = new Scanner(System.in);
@@ -61,6 +100,7 @@ public class Graphs {
             adjMatrix[v2][v1] = 1;
         }
         dftraversal(adjMatrix);
+        System.out.println(getPathBFS(adjMatrix,0,3));
 // for(int i = 0; i<n; i++){
 // for(int j = 0; j<n; j++){
 // System.out.print(adjMatrix[i][j] +" ");
