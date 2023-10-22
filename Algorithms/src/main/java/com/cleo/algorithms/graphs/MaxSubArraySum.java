@@ -40,7 +40,7 @@ public class MaxSubArraySum {
 
     public static void main(String[] args) {
         List<Long> a =List.of(1L,5L,9L,23L,34L,123L);
-        //System.out.println(a.stream().reduce(0L,(integer, aLong) -> integer+aLong).intValue());
+        System.out.println(a.stream().reduce(0L, Long::sum).intValue());
 
         System.out.println(maximumSum(a,37));
        // System.out.println("a"+12%1);
