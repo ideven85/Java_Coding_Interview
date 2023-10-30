@@ -29,6 +29,7 @@
         <module>Tetris</module>
         <module>Modern_Java</module>
         <module>Coding_Ninjas</module>
+        <module>Morgan_Interview</module>
     </modules>
     <properties>
         <maven.compiler.source>19</maven.compiler.source>
