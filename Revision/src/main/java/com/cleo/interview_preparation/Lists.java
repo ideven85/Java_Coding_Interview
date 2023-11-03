@@ -49,7 +49,7 @@ public class Lists {
         return true;
     }
 
-    public void removeLoop() {
+    public void removeLoop(ListNode head) {
         // code here
         // remove the loop without losing any ListNodes
         ListNode tortoise = head, hair = head.next;
@@ -57,31 +57,33 @@ public class Lists {
         int length = 0;
 
         while (hair != tortoise) {
-            if (hair.next == null || tortoise == null)
+            if (hair == null || hair.next == null)
                 break;
             tortoise = tortoise.next;
             hair = hair.next.next;
             count++;
         }
         ListNode current = head;
-        while (current != null) {
+        System.out.println(tortoise.val);
+        while (current !=hair) {
             length++;
             current = current.next;
         }
+        System.out.println(length);
         if (count >= length)
             return;
         current = head;
         for (int i = 0; i < count; i++) {
             current = current.next;
         }
-        ListNode temp = current.next;
+        ListNode temp = current;
         temp = temp.next;
         current.next = temp;
 
 
     }
 
-    public void insert(int val) {
+    public void insert(ListNode head, int val) {
 
         if (length() <= 0) {
             head = new ListNode(val);
@@ -164,21 +166,24 @@ public class Lists {
     public static void main(String[] args) {
         ListNode head = new ListNode(1);
         Lists l = new Lists();
-        l.insert(1);
-       l.insert(2);
+        l.insert(head,1);
+       l.insert(head,2);
       // l.insert(3);
-       l.insert(4);
+       l.insert(head,4);
+       l.printList(head);
       //  l.printList();
-        ListNode head2 = new ListNode(1);
+        /*ListNode head2 = new ListNode(1);
         Lists list2 = new Lists();
         list2.insert(0);
         list2.insert(3);
-        list2.insert(5);
+        list2.insert(5);*/
         ListNode merged = new ListNode(0);
       //  Lists mergedList = new Lists();
         //merged=mergedList.mergeTwoLists(head,head2);
         //mergedList.printList(merged);
-        ListNode swapped = l.swapPairs(head);
+       // ListNode swapped = l.swapPairs(head);
+        l.printList(head);
+        l.removeLoop(head);
         l.printList(head);
 
 
