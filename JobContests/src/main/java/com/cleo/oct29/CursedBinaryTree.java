@@ -4,5 +4,7 @@ public class CursedBinaryTree {
 
     public static int maximumSum(int n, Node root, int k) {
         // code here
+        return 0;
+
     }
 }

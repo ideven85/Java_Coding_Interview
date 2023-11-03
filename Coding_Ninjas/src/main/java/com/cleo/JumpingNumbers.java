@@ -1,4 +1,4 @@
-package com.cleo.skillTest2;
+package com.cleo;
 
 import java.util.stream.IntStream;
 
