@@ -9,7 +9,7 @@ public class BreakNumbers {
         if(index==N){
             for (int i = 0; i < N; i++)
                 System.out.print(output[i]+" ");
-            System.out.println("");
+            System.out.println();
             return;
 
 
@@ -54,7 +54,7 @@ public class BreakNumbers {
             arr[i]= in.nextInt();
         }
         //printCombination(arr,arr.length,arr.length);
-        int r=num-1;
+        int r=12;
         PossibleComb(arr,arr.length,r);
     }
 }
