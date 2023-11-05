@@ -55,6 +55,6 @@ public class BreakNumbers {
         }
         //printCombination(arr,arr.length,arr.length);
         int r=12;
-        PossibleComb(arr,arr.length,r);
+        PossibleComb(arr,arr.length,12);
     }
 }
