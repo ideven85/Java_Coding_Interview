@@ -1,15 +1,25 @@
 package com.cleo.ch01;
 
 import java.io.*;
+import java.nio.file.Files;
+import java.nio.file.Path;
 import java.nio.file.Paths;
+import java.nio.file.attribute.FileTime;
 import java.util.Objects;
 import java.util.StringTokenizer;
 
 public class WordCount {
 
-    private static final String FILE= Objects.requireNonNull(WordCount.class.getResource("ch01/rural.txt")).getFile();
+  //  private static final String FILE= Objects.requireNonNull(WordCount.class.getResource("ch01/rural.txt")).getFile();
     public static void main(String[] args) throws FileNotFoundException {
-        InputStream inputStream = new FileInputStream(String.valueOf(Paths.get(FILE)));
+        try {
+            Path path = Path.of(("python.mp4"));
+            FileTime creationTime = (FileTime) Files.getAttribute(path, "creationTime");
+            System.out.println(creationTime);
+        }catch (Exception e){
+            e.printStackTrace();
+        }
+      /*  InputStream inputStream = new FileInputStream(String.valueOf(Paths.get(FILE)));
         InputReader in = new InputReader(inputStream);
         int words=0;
         //Brute Force
@@ -18,7 +28,7 @@ public class WordCount {
             in.next();
         }
         System.out.println(words);
-
+*/
     }
     static class InputReader {
         public BufferedReader reader;
