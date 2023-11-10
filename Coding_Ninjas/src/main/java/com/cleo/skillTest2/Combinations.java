@@ -4,56 +4,36 @@ import java.util.Arrays;
 import java.util.Scanner;
 
 public class Combinations {
-    static Scanner s = new Scanner(System.in);
+    private static void generateCombinationsSumN(int[] arr, int[] output,int start,int end,int index,int N){
+        if(index==N){
+            for (int i = 0; i < N; i++)
+                System.out.print(output[i]+" ");
+            System.out.println();
+            return;
+
+
+        }
+        for (int i=start; i<=end && end-i+1 >= N-index; i++) {
+            output[index] = arr[i];
+            generateCombinationsSumN(arr, output, i+1, end, index+1, N);
+        }
+    }
+    public static void printCombination(int[] arr){
+        //Write your code here
+        int[] output = new int[arr.length];
+        int num=arr.length;
+        generateCombinationsSumN(arr,output,0,num-1,0,12);
+    }
 
     public static void main(String[] args) {
-        int number = s.nextInt();
-        printCombination(number);
-    }
-    public static void printCombination(int num){
-        //Write your code here
-        printAllUniqueParts(num);
 
-    }
-
-    static void printArray(int p[], int n)
-    {
-       //Arrays.sort(p);
-        for (int i = n-1; i >=0; i--) {
-            System.out.print(p[i] + " ");
+        Scanner in = new Scanner(System.in);
+        int num= in.nextInt();
+        int[] arr = new int[num];
+        for (int i = 0; i < num; i++) {
+            arr[i]= in.nextInt();
         }
-        System.out.println();
+        printCombination(arr);
     }
-
-    static void printAllUniqueParts(int n) {
-        int[] p = new int[n];
-        int k = 0;
-        p[k] = n;
-
-
-        while (true) {
-            //Arrays.sort(p);
-            printArray(p, k + 1);
-
-            int rem_val = 0;
-            while (k >= 0 && p[k] == 1) {
-                rem_val += p[k];
-                k--;
-            }
-            if (k < 0) return;
-
-            p[k]--;
-            rem_val++;
-            while (rem_val > p[k]) {
-                p[k + 1] = p[k];
-                rem_val = rem_val - p[k];
-                k++;
-            }
-
-            p[k + 1] = rem_val;
-            k++;
-        }
-    }
-
 
 }

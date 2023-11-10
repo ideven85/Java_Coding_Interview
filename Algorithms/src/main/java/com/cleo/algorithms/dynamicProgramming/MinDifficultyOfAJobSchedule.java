@@ -2,6 +2,10 @@ package com.cleo.algorithms.dynamicProgramming;
 
 import java.util.Arrays;
 
+/**
+ * LeetCode Hard
+ * https://leetcode.com/problems/minimum-difficulty-of-a-job-schedule/
+ */
 public class MinDifficultyOfAJobSchedule {
     /*
     class Solution:

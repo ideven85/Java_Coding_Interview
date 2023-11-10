@@ -1,8 +1,6 @@
 package com.cleo.algorithms.arrays;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
+import java.util.*;
 
 public class ArrayProblems {
 
@@ -84,6 +82,78 @@ public class ArrayProblems {
         return output;
     }
 
+    public void merge(int[] nums1, int m, int[] nums2, int n) {
+        int first=m-1;
+        int second=n-1;
+        int container=first+second+1;
+        while(second>=0){
+            if(first>=0&&nums1[first]>nums2[second])
+                nums1[container]=nums1[first--];
+            else
+                nums1[container]=nums2[second--];
+            container--;
+
+        }
+
+
+    }
+    public int removeElement(int[] nums, int val) {
+        int counter=0;
+        int n= nums.length;
+        for (int i = 0; i < n; i++) {
+            if(nums[i]!=val){
+                int temp=nums[i];
+                nums[i]=nums[counter];
+                nums[counter]=temp;
+                counter++;
+            }
+        }
+        return counter;
+
+    }
+    public int removeDuplicates(int[] nums) {
+      /*  int n = nums.length;
+        int count=0;
+        for (int i = n-2; i >=0 ; i--) {
+            if(nums[i]==nums[i+1]) {
+                nums[i] = nums[i - 1];
+
+            }
+
+        }*/
+        int counter=0;
+        int n= nums.length;
+
+        int previous=nums[0],current=0;
+        for (int i = 1; i < n; i++) {
+            current=nums[i];
+            if(current!=previous){
+                previous=current;
+                nums[++counter]=current;
+            }
+        }
+        return counter+1;
+
+    }
+    public int removeDuplicatesAtMostTwice(int[] nums) {
+        Map<Integer,Integer> frequencyMap = new LinkedHashMap<>();
+        for(int num:nums)
+            frequencyMap.compute(num,(k,v)->v==null?1:++v);
+        int i=0;
+        for(var m:frequencyMap.entrySet()){
+            int freq=Math.min(m.getValue(),2);
+            for (int j = 0; j < freq; j++) {
+                nums[i++]=m.getKey();
+            }
+
+        }
+        return i;
+
+
+    }
+
+
+
     public static void main(String[] args) {
         int[] array = new int[]{1, 5, 10, 20, 28, 3};
         int[] array2 = new int[]{26, 134, 135, 15, 17};
@@ -91,5 +161,18 @@ public class ArrayProblems {
         System.out.println(threeNumberSum(array,target));
         System.out.println(Arrays.toString(smallestDifference(array,array2)));
         System.out.println(Arrays.toString(arrayOfProducts(array)));
+        //Input: nums1 = [1,2,3,0,0,0], m = 3, nums2 = [2,5,6], n = 3
+        int[] nums1={1,2,3,0,0,0},nums2={2,5,6};
+        int m=3,n=3;
+        ArrayProblems problems = new ArrayProblems();
+        problems.merge(nums1,m,nums2,n);
+        System.out.println(Arrays.toString(nums1));
+        int[] a={1};
+        int k=2;
+        System.out.println(problems.removeDuplicates(a));
+        System.out.println(Arrays.toString(a));
+        int[] arr={1,1,1,2,2,3,4,4,5,5,5,5};
+        System.out.println(problems.removeDuplicatesAtMostTwice(arr));
+        System.out.println(Arrays.toString(arr));
     }
 }

@@ -31,6 +31,9 @@ public class LambdaCalculus {
     public static void main(String[] args) {
         LambdaCalculus calculus = new LambdaCalculus();
         calculus.capture();
+        ModifyTwiceSample modifier = (x)->x*2;
+        int y = modifier.modifyTwice(5);
+        System.out.println(y);
         Predicate<String> isNull = Objects::nonNull;
         var five = calculus.isGreaterThan(5);
         var six = calculus.isGreaterThan(6);

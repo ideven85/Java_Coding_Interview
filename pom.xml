@@ -25,7 +25,6 @@
         <module>Revision</module>
         <module>Algorithms</module>
         <module>Low_Level_Designs</module>
-        <module>Coding_Challenges</module>
         <module>NotePad</module>
         <module>Tetris</module>
         <module>Modern_Java</module>
@@ -33,8 +32,62 @@
         <module>JobContests</module>
     </modules>
     <properties>
-        <maven.compiler.source>19</maven.compiler.source>
-        <maven.compiler.target>19</maven.compiler.target>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+        <gib.referenceBranch>refs/remotes/origin/master</gib.referenceBranch>
+        <gib.skipTestsForUpstreamModules>true</gib.skipTestsForUpstreamModules>
+        <gib.buildUpstream>false</gib.buildUpstream>
+        <gib.failOnMissingGitDir>false</gib.failOnMissingGitDir>
+        <gib.failOnError>false</gib.failOnError>
+        <gib.disable>true</gib.disable>
+
+        <!-- used only in dependency management to force this version, not included as a direct dependency -->
+        <junit.version>4.13.2</junit.version>
+        <assertj.version>3.21.0</assertj.version>
+        <hamcrest.version>2.2</hamcrest.version>
+        <hamcrest-all.version>1.3</hamcrest-all.version>
+        <mockito.version>4.4.0</mockito.version>
+        <byte-buddy.version>1.14.6</byte-buddy.version>
+
+        <!-- logging -->
+        <!-- overwriting in the slf4j and logback in the hibernate-jpa, spring-data-eclipselink. When updated to the latest version remove the version from that module-->
+        <org.slf4j.version>1.7.32</org.slf4j.version>
+        <logback.version>1.2.7</logback.version>
+
+        <!-- plugins -->
+        <maven-surefire-plugin.version>2.22.2</maven-surefire-plugin.version>
+        <maven-compiler-plugin.version>3.11.0</maven-compiler-plugin.version>
+        <exec-maven-plugin.version>3.1.0</exec-maven-plugin.version>
+        <java.version>19</java.version>
+        <log4j.version>1.2.17</log4j.version>
+        <jmh-core.version>1.36</jmh-core.version>
+        <jmh-generator.version>1.36</jmh-generator.version>
+        <maven-failsafe-plugin.version>3.1.2</maven-failsafe-plugin.version>
+        <commons-collections4.version>4.4</commons-collections4.version>
+        <commons-io.version>2.13.0</commons-io.version>
+        <commons-lang.version>2.6</commons-lang.version>
+        <commons-lang3.version>3.13.0</commons-lang3.version>
+        <commons-cli.version>1.5.0</commons-cli.version>
+        <maven-war-plugin.version>3.4.0</maven-war-plugin.version>
+        <javax.servlet-api.version>4.0.1</javax.servlet-api.version>
+        <jstl-api.version>1.2</jstl-api.version>
+        <javax.servlet.jsp-api.version>2.3.3</javax.servlet.jsp-api.version>
+        <jstl.version>1.2</jstl.version>
+        <jackson.version>2.15.2</jackson.version>
+        <commons-fileupload.version>1.5</commons-fileupload.version>
+        <junit-platform.version>1.9.2</junit-platform.version>
+        <junit-jupiter.version>5.9.2</junit-jupiter.version>
+        <junit-platform-surefire-provider.version>1.3.2</junit-platform-surefire-provider.version>
+        <directory-maven-plugin.version>1.0</directory-maven-plugin.version>
+        <maven-install-plugin.version>3.1.1</maven-install-plugin.version>
+        <custom-pmd.version>0.0.1</custom-pmd.version>
+        <gitflow-incremental-builder.version>3.12.2</gitflow-incremental-builder.version>
+        <maven-jxr-plugin.version>3.3.0</maven-jxr-plugin.version>
+        <maven-pmd-plugin.version>3.21.0</maven-pmd-plugin.version>
+        <lombok.version>1.18.28</lombok.version>
+        <h2.version>2.1.214</h2.version>
+        <guava.version>32.1.2-jre</guava.version>
+        <maven-jar-plugin.version>3.3.0</maven-jar-plugin.version>
     </properties>
 
     <dependencyManagement>

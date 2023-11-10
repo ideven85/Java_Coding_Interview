@@ -13,6 +13,8 @@ public class WaterNJugs {
     private static String canJugBeFilled(int a, int b, int c){
         if(a+b<c)
             return "No";
+        /*if(a/b==1)
+            return "Yes";*/
         if(c%(gcd(a,b))==0)
             return "Yes";
         return "No";
@@ -26,13 +28,19 @@ public class WaterNJugs {
         // Write your code here
         Scanner in = new Scanner(System.in);
         int n = in.nextInt();
-        while(n-->0){
-            int john= in.nextInt();
-            int zeus = in.nextInt();
-            int peter= in.nextInt();
-            System.out.println(canJugBeFilled(john,zeus,peter));
+        while(n-->0) {
+            int a = in.nextInt();
+            int b = in.nextInt();
+            int c = in.nextInt();
+            int m = c * b;
+            int bigger = Math.max(c, m);
+            int smaller = Math.min(c, m);
 
+                System.out.println(canJugBeFilled(a, b, c));
         }
 
+
     }
+
+
 }

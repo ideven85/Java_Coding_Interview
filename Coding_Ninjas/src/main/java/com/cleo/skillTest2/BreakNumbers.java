@@ -5,56 +5,53 @@ import java.util.stream.IntStream;
 
 public class BreakNumbers {
 
-    private static void generateCombinationsSumN(int[] arr, int[] output,int start,int end,int index,int N){
-        if(index==N){
-            for (int i = 0; i < N; i++)
-                System.out.print(output[i]+" ");
-            System.out.println();
-            return;
-
-
-        }
-        for (int i=start; i<=end && end-i+1 >= N-index; i++) {
-            output[index] = arr[i];
-            generateCombinationsSumN(arr, output, i+1, end, index+1, N);
-        }
-    }
-    public static void printCombination(int[] arr,int n, int N){
+    public static void printCombination(int num){
         //Write your code here
-        int[] output = new int[N];
+        printAllUniqueParts(num);
 
-        generateCombinationsSumN(arr, output, 0, n-1, 0, N);
     }
-    static void cobination(int arr[], int data[], int start, int end, int indices, int N) {
-        if (indices == N) {
-            for (int j=0; j<N; j++) {
-                System.out.print(data[j] + " ");
+
+    static void printArray(int p[], int n)
+    {
+        for (int i = n-1; i >=0; i--) {
+            System.out.print(p[i] + " ");
+        }
+        System.out.println();
+    }
+
+    static void printAllUniqueParts(int n) {
+        int[] p = new int[n];
+        int k = 0;
+        p[k] = n;
+
+
+        while (true) {
+
+            printArray(p, k + 1);
+
+            int rem_val = 0;
+            while (k >= 0 && p[k] == 1) {
+                rem_val += p[k];
+                k--;
             }
-            System.out.println("");
-            return;
-        }
+            if (k < 0) return;
 
-        for (int i=start; i<=end && end-i+1 >= N-indices; i++) {
-            data[indices] = arr[i];
-            cobination(arr, data, i+1, end, indices+1, N);
+            p[k]--;
+            rem_val++;
+            while (rem_val > p[k]) {
+                p[k + 1] = p[k];
+                rem_val = rem_val - p[k];
+                k++;
+            }
+
+            p[k + 1] = rem_val;
+            k++;
         }
     }
+    static Scanner s = new Scanner(System.in);
 
-    static void PossibleComb(int arr[], int n, int N) {
-
-        int data[]=new int[N];
-        cobination(arr, data, 0, n-1, 0, N);
-    }
     public static void main(String[] args) {
-
-        Scanner in = new Scanner(System.in);
-        int num= in.nextInt();
-        int[] arr = new int[num];
-        for (int i = 0; i < num; i++) {
-            arr[i]= in.nextInt();
-        }
-        //printCombination(arr,arr.length,arr.length);
-        int r=12;
-        PossibleComb(arr,arr.length,12);
+        int number = s.nextInt();
+        printCombination(number);
     }
 }
