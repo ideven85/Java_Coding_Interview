@@ -39,23 +39,28 @@ public class PartitionList {
 
     }
 
-    public static void main(String[] args) {
-        LinkedList list = new LinkedList(12);
-        LinkedList head = list;
-        list.next = new LinkedList(10);
-        list=list.next;
-        list.next = new LinkedList(1);
-        list=list.next;
-        list.next = new LinkedList(5);
-        list=list.next;list.next = new LinkedList(2);
-        list=list.next;list.next = new LinkedList(1);
-        list=list.next;list.next = new LinkedList(-4);
-        head = rearrangeLinkedList(head,-4);
-        ShiftLinkedList list1 = new ShiftLinkedList();
-        head=list1.kReverse(head,4);
+    private static void printList(LinkedList head){
         while(head!=null){
             System.out.print(head.value + " ");
+            head=head.next;
         }
+        System.out.println();
+    }
+    public static void main(String[] args) {
+        LinkedList list = new LinkedList(3);
+        LinkedList head = list;
+        list.next = new LinkedList(0);
+        list=list.next;
+        list.next = new LinkedList(5);
+        list=list.next;
+        list.next = new LinkedList(2);
+        list=list.next;list.next = new LinkedList(1);
+        list=list.next;list.next = new LinkedList(4);
+       // list=list.next;list.next = new LinkedList(-4);
+        // head = rearrangeLinkedList(head,-4);
+        LinkedList list1 = ShiftLinkedList.kReverse(head,3);
+        printList(list);
+        printList(list1);
 
 
 
