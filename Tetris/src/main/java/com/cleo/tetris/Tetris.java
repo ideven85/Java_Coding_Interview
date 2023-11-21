@@ -23,6 +23,7 @@ public class Tetris extends JFrame {
         var board = new Board(this);
         add(board);
         board.start();
+        System.out.println(getShape());
 
         setTitle("Tetris");
         setSize(200, 400);

@@ -27,7 +27,7 @@ package com.cleo.algorithms.leetcodePremium;
 public class MaxRobbery {
 
     public static void main(String args[]) {
-        int[] nums = {1, 4, 5, 6, 1, 1, 3};
+        int[] nums =  {-366, 50, 677, -13, -33, -923, 495, -851};
 
         int result = rob(nums);
         System.out.println(result);
@@ -45,11 +45,11 @@ public class MaxRobbery {
                 maxRobValueArr[index] = nums[index];
                 maxRobValue = maxRobValueArr[index];
             } else if(index == nums.length -2) {
-                maxRobValueArr[index] = nums[index]>nums[index+1] ? nums[index] : nums[index+1];
+                maxRobValueArr[index] = Math.max(nums[index], nums[index + 1]);
                 maxRobValue =  maxRobValueArr[index];
             } else {
                 maxRobValueArr[index] = nums[index] + findmaxFromPreviousHomes(maxRobValueArr, index+2, nums.length);
-                maxRobValue = maxRobValueArr[index]>maxRobValue ? maxRobValueArr[index] : maxRobValue;
+                maxRobValue = Math.max(maxRobValueArr[index], maxRobValue);
             }
 
         }

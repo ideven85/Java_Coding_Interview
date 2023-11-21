@@ -26,6 +26,10 @@ airports=["BGI", "CDG", "DEL", "DOH", "DSM", "EWR", "EYW", "HND", "ICN", "JFK", 
     ]
  */
 //Please do this again
+/**
+Minimum Connections Needed To Connect All AirPorts
+ AlgoExpert Hard
+ */
 public class MinCostToConnectAllAirPorts {
 
     static class AirPortNode{

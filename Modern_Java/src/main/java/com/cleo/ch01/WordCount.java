@@ -12,8 +12,13 @@ public class WordCount {
 
   //  private static final String FILE= Objects.requireNonNull(WordCount.class.getResource("ch01/rural.txt")).getFile();
     public static void main(String[] args) throws FileNotFoundException {
+
         try {
             Path path = Path.of(("python.mp4"));
+            File python=path.toFile();
+            try(BufferedReader reader=new BufferedReader(new FileReader(python))){
+
+            }
             FileTime creationTime = (FileTime) Files.getAttribute(path, "creationTime");
             System.out.println(creationTime);
         }catch (Exception e){

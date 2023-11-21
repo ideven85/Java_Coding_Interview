@@ -6,27 +6,36 @@ public class Shape {
 
     protected enum Tetrominoe{
         NoShape, ZShape, SShape,
-        LineShape, TShape, SquareShape, LShape, MirroredLShape
+        LineShape, TShape, SquareShape, LShape, MirroredLShape;
+
+        @Override
+        public String toString() {
+            return this.name() ;
+        }
     }
 
     private Tetrominoe pieceShape;
 
-    private int[][] coords;
+    private final int[][] coords;
 
     public Shape(){
         this.coords = new int[4][2];
         setShape(Tetrominoe.NoShape);
     }
 
+    //Correct After 6 months because of a silly mistake..lol
+
     public void setShape(Tetrominoe shape){
 
         int[][][] coOrdsTable = new int[][][]{
+                //  NoShape, ZShape, SShape,
+                //        LineShape, TShape, SquareShape, LShape, MirroredLShape;
                 {{0,0},{0,0},{0,0},{0,0}},
                 {{0,-1},{0,0},{-1,0},{-1,1}},
                 {{0,-1},{0,0},{1,0},{1,1}},
                 {{0,-1},{0,0},{0,1},{0,2}},
                 {{-1,0},{0,0},{1,0},{0,1}},
-                {{0,0},{1,0},{0,1},{0,1}},
+                {{0,0},{1,0},{0,1},{1,1}},
                 {{-1,-1},{0,-1},{0,0},{0,1}},
                 {{1,-1},{0,-1},{0,0},{0,1}}
         };
@@ -51,6 +60,7 @@ public class Shape {
     }
 
     Tetrominoe getShape(){
+
         return pieceShape;
     }
 
