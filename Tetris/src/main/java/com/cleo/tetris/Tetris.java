@@ -42,6 +42,7 @@ public class Tetris extends JFrame {
 
             var game = new Tetris();
             game.setVisible(true);
+
         });
     }
 }
