@@ -1,4 +1,4 @@
-package com.cleo;
+package com.cleo.dummy;
 
 import java.util.List;
 

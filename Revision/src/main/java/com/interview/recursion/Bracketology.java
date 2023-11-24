@@ -49,10 +49,10 @@ public class Bracketology {
         }
     }
     
-    public boolean matchBracket(char []brackets){
+    public boolean matchBracket(String brackets){
         Deque<Character> stack = new LinkedList<Character>();
         
-        for(Character ch : brackets){
+        for(Character ch : brackets.toCharArray()){
             char checkChar = getOpeningCharacter(ch);
             if(checkChar == 0){
                 stack.addFirst(ch);

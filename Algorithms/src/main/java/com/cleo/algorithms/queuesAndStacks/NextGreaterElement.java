@@ -117,17 +117,11 @@ public class NextGreaterElement {
         return output;
     }
 
-    public int[] nextGreaterElementV2(int[] array) {
-        // Write your code here.
-        java.util.Stack<Integer> stack = new Stack<>();
-        int n = array.length;
 
-        return null;
-
-    }
 
     public static void main(String[] args) {
         int[] nums = {6, 4, 5, 7, 2, 1, 3};
         System.out.println(Arrays.toString(nextGreaterElementOptimised(nums)));
+        System.out.println(Arrays.toString(nextGreaterElement(nums)));
     }
 }

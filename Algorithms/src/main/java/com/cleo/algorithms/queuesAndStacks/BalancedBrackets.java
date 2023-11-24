@@ -23,11 +23,12 @@ public class BalancedBrackets {
                 return false;
 
         }
+        System.out.println(stack);
         return stack.isEmpty();
     }
 
     public static void main(String[] args) {
-        String s = "()()[{()})]";
+        String s = "()";
         System.out.println(balancedBrackets(s));
     }
 }

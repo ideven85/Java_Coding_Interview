@@ -17,6 +17,7 @@ public class VerticalOrderTraversal {
             TreeNode current =  queue.poll();
 
         }
+        return null;
 
      }
 }
