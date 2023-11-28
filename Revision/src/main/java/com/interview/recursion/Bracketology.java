@@ -1,5 +1,6 @@
 package com.interview.recursion;
 
+import java.util.Arrays;
 import java.util.Deque;
 import java.util.LinkedList;
 
@@ -90,7 +91,7 @@ public class Bracketology {
         char result[] = new char[n*2];
 //      matcher.bracketPermutation(result, n, 0, 0, 0);
         
-        System.out.println(matcher.matchBracket("[({()}{}[])]".toCharArray()));
+        System.out.println(matcher.matchBracket(Arrays.toString("[({()}{}[])]".toCharArray())));
     }
     
     

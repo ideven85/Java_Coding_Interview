@@ -21,7 +21,6 @@
         <url>https://svn.apache.org/viewvc/maven</url>
     </scm>
     <modules>
-
         <module>Revision</module>
         <module>Algorithms</module>
         <module>Low_Level_Designs</module>
