@@ -29,7 +29,6 @@
         <module>Modern_Java</module>
         <module>Coding_Ninjas</module>
         <module>JobContests</module>
-        <module>SudokuGame</module>
         <module>LeetCode_InterviewSeries</module>
     </modules>
     <properties>
