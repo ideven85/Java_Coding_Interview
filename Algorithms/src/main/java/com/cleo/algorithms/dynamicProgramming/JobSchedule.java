@@ -43,4 +43,15 @@ public class JobSchedule {
      *                     dp[d][i] = min(dp[d][i], maxd + dp[d - 1][j + 1])
      *         return dp[d][0] if dp[d][0] < inf else -1
      */
+
+
+    // TODO: 02/12/23
+
+    public int minDifficultyV2(int[] jobDifficulty, int d) {
+
+        return -1;
+    }
+
+
+
 }
