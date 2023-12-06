@@ -91,14 +91,34 @@ public class CoinChange {
         return dp[n]==Integer.MAX_VALUE?-1:dp[n];
     }
 
+
+    private static int[][] memo;
+    private static int numberOfCoinsForChange(int[] denmos,int amount, int n){
+     /*   int n = denoms.length;
+        //Arrays.sort(denoms);
+        if(denoms[index]<amount)
+            total+=denoms[index]+numberOfCoinsForChange(amount-denoms[index],denoms,)
+*/       if(amount==0)
+            return 1;
+        if(amount<0)
+            return 0;
+
+        if(n==0)
+            return 0;
+        else
+            return numberOfCoinsForChange(denmos,amount-denmos[n-1],n)
+                    +numberOfCoinsForChange(denmos,amount,n-1);
+    }
+
     public static void main(String[] args) {
-        int[] coins = {1,5,10};
-        int amount = 11;
+        int[] coins = {2,3,5};
+        int amount = 10;
         CoinChange coinChange = new CoinChange();
         int[] demoms = {3,5};
         int n = 9;
         System.out.println(minNumberOfCoinsForChange(n,demoms));
         System.out.println(minNumberOfCoinsForChange(amount,coins));
+        System.out.println(numberOfCoinsForChange(coins,amount,3));
     }
 }
 

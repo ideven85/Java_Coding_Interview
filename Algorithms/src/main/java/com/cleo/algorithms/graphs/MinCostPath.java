@@ -53,7 +53,8 @@ public class MinCostPath {
         //0 -2 -3 1
         //-1 4 0 -2
         //1 -2 -3 0
-        int[][] grid = {{0,-2,-3,1},{-1,4,0,-2},{1,-2,-3,0}};
+        int[][] grid = {{9,4,9,9},{6,7,6,4},
+                {8,3,3,7},{7,4,9,10}};
         MinCostPath minCostPath = new MinCostPath();
         System.out.println(minCostPath.minPathSum(grid));
     }
