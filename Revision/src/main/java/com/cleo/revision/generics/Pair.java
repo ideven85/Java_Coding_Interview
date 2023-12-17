@@ -35,7 +35,7 @@ public class Pair<T> {
 
 class ArrayAlgorithm{
 
-    public static Pair<String> minMax(String[] a){
+    /*public static Pair<String> minMax(String[] a){
 
         if(a==null||a.length==0)
             return null;
@@ -54,6 +54,17 @@ class ArrayAlgorithm{
         }
         return new Pair<>(min,max);
 
+    }*/
+    public static <T extends Comparable<T>> Pair<T> minMax(T[] a){
+        var min = a[0];
+        var max=a[1];
+        for (int i = 1; i < a.length; i++) {
+            if(min.compareTo(a[i])>0)
+                min=a[i];
+            if(max.compareTo(a[i])<0)
+                max=a[i];
+        }
+        return new Pair<>(min,max);
     }
 }
 

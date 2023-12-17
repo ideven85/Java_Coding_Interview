@@ -146,7 +146,7 @@ public class whiteSubtreee {
         }
     }
     static int c[],dp[],n,ans[];
-    static ArrayList<Integer> arr[];
+    static ArrayList<Integer>[] arr;
     static int dfs(int i,int p){
         int di=-1;
         if(c[i]==1)di=1;

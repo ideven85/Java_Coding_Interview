@@ -2,8 +2,7 @@ package LinkedList2;
 
 
 import java.util.Scanner;
-
-class Node<T>{
+ class Node<T>{
     T data;
     Node<T> next;
     Node(T data){
@@ -20,11 +19,10 @@ public class PrintRecursion {
             Node<Integer> Chead = new Node<>(data);
             if (head==null){
                 head = Chead;
-                tail = Chead;
             }else {
                 tail.next = Chead;
-                tail = Chead;
             }
+            tail = Chead;
             data =s.nextInt();
         }
         s.close();

@@ -21,9 +21,25 @@ public class Main {
         }
        /* System.out.println();*/
     }
+    public long solve(long a, long b) {
+        // code here
+        long max = Math.max(a,b);
+        long answer=Long.MAX_VALUE;
+        for (long i = 1; i <= max; i++) {
+            long x=a&i;
+            long y=b&i;
+            answer=Math.min(x+y,answer);
+          //  System.out.print(answer + " ");
+        }
+        return answer;
+
+    }
     public static void main(String[] args) {
         TreeNode root = new TreeNode(10),current=null;
         Main main = new Main();
+        System.out.println(main.solve(4,8));
+        int a = 8&1;
+        System.out.println(a);
         main.insert(root,10);
         main.insert(root,5);
         main.insert(root,12);
