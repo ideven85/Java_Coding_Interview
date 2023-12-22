@@ -1,4 +1,4 @@
-package com.cleo.ch01;
+package com.cleo.BuilderPattern;
 
 public class NutritionFacts {
 

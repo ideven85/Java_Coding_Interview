@@ -1,11 +1,9 @@
-package com.cleo.ch01;
+package com.cleo.BuilderPattern;
 
 import java.io.*;
 import java.nio.file.Files;
 import java.nio.file.Path;
-import java.nio.file.Paths;
 import java.nio.file.attribute.FileTime;
-import java.util.Objects;
 import java.util.StringTokenizer;
 
 public class WordCount {
