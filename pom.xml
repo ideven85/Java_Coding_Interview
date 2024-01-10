@@ -29,7 +29,7 @@
         <module>Coding_Ninjas</module>
         <module>JobContests</module>
         <module>LeetCode_InterviewSeries</module>
-        <module>Effective_Java</module>
+        <module>LLD</module>
     </modules>
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>

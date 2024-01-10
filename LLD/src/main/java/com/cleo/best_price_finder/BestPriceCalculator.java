@@ -15,17 +15,19 @@ public class BestPriceCalculator {
             new Shop("ghi"),
             new Shop("jkl"),
             new Shop("mnop"),
+            new Shop("my_favorite_shop"),
+            new Shop("my_favorite_shop"),
+            new Shop("my_favorite_shop"),
+            new Shop("my_favorite_shop"),
             new Shop("my_favorite_shop")
     );
-    //todo Add exexutor to calculatePrice Method
-    private final Executor executor = Executors.newFixedThreadPool(
-            Math.min(shopsInMall.size(),100),
-            (Runnable r)->{
-                Thread t = new Thread(r);
-                t.setDaemon(true);
-                return t;
-            }
-    );
+
+    private final Executor executor = Executors.newFixedThreadPool
+            (Math.min(shopsInMall.size(),100),(Runnable r)->{
+        Thread t = new Thread(r);
+        t.setDaemon(true);
+        return t;
+    });
 
 
     public List<String> findPricesSequential(String product){
@@ -47,7 +49,7 @@ public class BestPriceCalculator {
                 .map(shop -> CompletableFuture.supplyAsync(
                         ()->(
                         shop.getName() + " price is " + shop.getPrice(product)
-                        )))
+                        ),executor))
                 .toList();
         //Now to get list of prices from CompletableFuture prices..
 
