@@ -14,50 +14,60 @@ public class BestPriceCalculator {
             new Shop("def"),
             new Shop("ghi"),
             new Shop("jkl"),
-            new Shop("mnop"),
-            new Shop("my_favorite_shop"),
-            new Shop("my_favorite_shop"),
-            new Shop("my_favorite_shop"),
-            new Shop("my_favorite_shop"),
-            new Shop("my_favorite_shop")
+            new Shop("mnop")
     );
 
     private final Executor executor = Executors.newFixedThreadPool
-            (Math.min(shopsInMall.size(),100),(Runnable r)->{
+            (Math.max(shopsInMall.size(),100),(Runnable r)->{
         Thread t = new Thread(r);
         t.setDaemon(true);
         return t;
     });
 
 
+    /*
+    Applying Discount sequentially
+     */
     public List<String> findPricesSequential(String product){
+
         return shopsInMall.stream()
-                .map(shop -> String.format("%s price is: %s",
-                        shop.getName(),shop.getPrice(product)))
-                .collect(toList());
+                .map(shop -> shop.getPrice(product))
+                .map(Quote::parse)
+                .map(Discount::applyDiscount)
+                .toList();
     }
+    /**
+     * Party time now, we do parallel
+     */
     public List<String> findPricesParallel(String product){
+
         return shopsInMall.parallelStream()
-                .map(shop -> String.format("%s price is: %s",
-                        shop.getName(),shop.getPrice(product)))
-                .collect(toList());
+                .map(shop -> shop.getPrice(product))
+                .map(Quote::parse)
+                .map(Discount::applyDiscount)
+                .toList();
     }
+    /**
+     * Hardest Part, Doing it async
+     */
 
     public List<String> findPricesAsync(String product){
-        List<CompletableFuture<String>> futurePrices=shopsInMall
-                .stream()
-                .map(shop -> CompletableFuture.supplyAsync(
-                        ()->(
-                        shop.getName() + " price is " + shop.getPrice(product)
-                        ),executor))
+        List<CompletableFuture<String>> futurePrices = shopsInMall.parallelStream()
+                .map(shop ->
+                        CompletableFuture.supplyAsync(()->
+                        shop.getPrice(product),executor))
+                .map(future->future.thenApply(Quote::parse))
+                .map(future->future.thenCompose(quote ->
+                        CompletableFuture.supplyAsync(
+                                ()->
+                                Discount.applyDiscount(quote),executor
+                                ))
+                )
                 .toList();
-        //Now to get list of prices from CompletableFuture prices..
-
-        return futurePrices.stream()
+        return futurePrices.parallelStream()
                 .map(CompletableFuture::join)
                 .toList();
 
-
-
     }
 }
+

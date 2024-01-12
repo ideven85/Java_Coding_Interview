@@ -17,14 +17,14 @@ public class Shop {
     }
 
     //todo
-    public double getPrice(){
-        //We want our client to supply his own product... Something is wrong with this code
-        return 0;
-    }
 
-    public double getPrice(String product){
+    public String getPrice(String product){
         //to be implemented
-        return calculatePrice(product);
+       double price = calculatePrice(product);
+       Discount.Code code = Discount.Code
+               .values()[random.nextInt(Discount.Code.values().length)];
+
+       return String.format("%2s:%.2f:%s",getName(),price,code);
     }
 
     public Future<Double> getPriceAsync(String product){
@@ -38,6 +38,9 @@ public class Shop {
 //                futurePrice.completeExceptionally(ex);
 //            }
 //        }).start();
+
+
+
         //Return the future price without waiting for the result to be computed
         return CompletableFuture.supplyAsync(()->calculatePrice(product));
     }
@@ -60,42 +63,9 @@ public class Shop {
 
     }
 
-    @Override
-    public String toString() {
-        return "Shop " + getName() + " has product available with price: " + getPrice();
-    }
 
     public String getName() {
         return shop;
-    }
-
-/*
-    public static void main(String[] args) {
-        Shop shop = new Shop("Cleo Electronics");
-        long start = System.nanoTime();
-        //Why we are changing the product name
-        Future<Double> futurePrice = shop.getPriceAsync("MacBook_Pro_2022");
-        long invocation_time = ((System.nanoTime() -start)/1_000_000);
-        System.out.println("Price to calculate: " + invocation_time + " milliseconds");
-        System.out.println(factorial(20));
-
-        try{
-            //Getting Price in a blocking call
-            double price = futurePrice.get();
-
-            System.out.printf("Price is %.2f%n", price);
-        }catch (Exception e){
-            throw new RuntimeException(e);
-        }
-        long total_time=((System.nanoTime() -start)/1_000_000);
-        System.out.println("Price to retrieve " + total_time  + " milli seconds");
-
-
-
-    }
-*/
-    private static double factorial(int n){
-        return n<2?1:n*factorial(n-1);
     }
 
 }

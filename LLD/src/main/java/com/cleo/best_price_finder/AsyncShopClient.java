@@ -31,7 +31,7 @@ public class AsyncShopClient {
         System.out.println("Sequential Done in " + duration + " msecs");
         start = System.nanoTime();
         System.out.println(bestPriceCalculatorV1.findPricesParallel("myPhone27S"));
-        duration = ( System.nanoTime() - start ) / 1_000_000;
+         duration = ( System.nanoTime() - start ) / 1_000_000;
         System.out.println("Parallel Done in " + duration + " msecs");
         start = System.nanoTime();
         System.out.println(bestPriceCalculatorV1.findPricesAsync("myPhone27S"));
