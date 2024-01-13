@@ -29,7 +29,9 @@
         <module>Coding_Ninjas</module>
         <module>JobContests</module>
         <module>LeetCode_InterviewSeries</module>
-        <module>LLD</module>
+        <module>Best_Price_Finder</module>
+        <module>Design_Patterns</module>
+        <module>Employee_Management</module>
     </modules>
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>

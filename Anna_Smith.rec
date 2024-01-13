@@ -1,5 +1,5 @@
 ### EMPLOYEE RECORD ####
 NAME: Anna Smith
-POSITION: hr.personnel.FullTimeEmployee
+POSITION: com.cleo.hr.personnel.FullTimeEmployee
 EMAIL: Anna.Smith@globomanticshr.com
 MONTHLY WAGE: 2000

@@ -1,7 +1,6 @@
 package hr.persistence;
 
 import hr.logging.ConsoleLogger;
-import hr.personnel.*;
 
 import java.io.File;
 import java.io.FileNotFoundException;
