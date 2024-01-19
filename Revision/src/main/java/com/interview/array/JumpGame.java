@@ -37,19 +37,25 @@ public class JumpGame {
         int current = 0;
         int max = 0;
         int count = 0;
-        for (int i = 0; i < nums.length - 1; i++) {
-            max = Math.max(max, i + nums[i]);
-            if (current == i) {
-                count++;
-                current = max;
+        int i;
+        if(canJump(nums)) {
+            for (i = 0; i < nums.length - 1; i++) {
+                max = Math.max(max, i + nums[i]);
+                if (current == i) {
+                    count++;
+                    current = max;
+                }
             }
+            System.out.println(i);
+            return count;
+        }else{
+            return -1;
         }
-        return count;
     }
 
     public static void main(String args[]) {
         JumpGame jumpGame = new JumpGame();
-        int[] nums = {3, 2, 3, 0, 2, 1};
+        int[] nums = {3, 0, 2, 0, 0, 1};
         System.out.println(jumpGame.jump(nums));
         int[] nums1 = {3, 0, 2, 0, 0, 1};
         System.out.println(jumpGame.canJump(nums1));

@@ -34,12 +34,12 @@ public class MissingPositive {
 
 
     }
-    void swap(int[] arr,int i,int correct) {
+   static void swap(int[] arr,int i,int correct) {
         int temp=arr[i];
         arr[i]= arr[correct];
         arr[correct]= temp;
     }
-    public int missingNumberV2(int[] arr) {
+    public static int missingNumberV2(int[] arr) {
         int i = 0;
         while (i < arr.length) {
             int correct = arr[i];
@@ -49,21 +49,45 @@ public class MissingPositive {
                 i++;
             }
         }
-
+        System.out.println(Arrays.toString(arr));
         // search for first missing number
         for (int index = 0; index < arr.length; index++) {
-            if (arr[index] != index) {
-                return index;
+            if (arr[index] != index+1) {
+                return index+1;
             }
         }
 
         // case 2
-        return arr.length;
+        return arr.length+1;
+    }
+    public static int SmallestPositiveMissingNumber4(int[] arr, int size)
+    {
+        int temp;
+        for (int i = 0; i < size; i++)
+        {
+
+            while (arr[i] != i + 1 && arr[i] > 0 && arr[i] <= size)
+            {
+                temp = arr[i];
+                arr[i] = arr[temp - 1];
+                arr[temp - 1] = temp;
+            }
+        }
+
+
+
+            for (int i = 0; i < size; i++) {
+                if (arr[i] != i + 1)
+                    return i + 1;
+            }
+            return size+1;
+
     }
 
 
     public static void main(String[] args) {
-        int[] nums= {0,2,1,4};
-        System.out.println(missingNumber(nums));
+        int[] nums= {1,2,3,4,5};
+        System.out.println(missingNumberV2(nums));
+        System.out.println("New:"+SmallestPositiveMissingNumber4(nums,nums.length));
     }
 }

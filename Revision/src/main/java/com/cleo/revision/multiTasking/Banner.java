@@ -27,7 +27,7 @@ public class Banner extends JFrame implements Runnable {
         g.setFont(f);
         g.drawString(str,10,100);
         try {
-            g.drawImage(ImageIO.read(new File("src/main/resources/010.jpeg")), 0, 1, Color.CYAN, null);
+            g.drawImage(ImageIO.read(new File(Banner.class.getResource("010.jpeg").getFile())), 0, 1, Color.CYAN, null);
         }catch (Exception e){
             e.printStackTrace();
         }

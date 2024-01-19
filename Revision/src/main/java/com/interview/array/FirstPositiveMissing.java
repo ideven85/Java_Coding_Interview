@@ -40,4 +40,9 @@ public class FirstPositiveMissing {
         nums[start] = nums[end];
         nums[end] = t;
     }
+
+    public static void main(String[] args) {
+        FirstPositiveMissing firstPositiveMissing = new FirstPositiveMissing();
+        System.out.println(firstPositiveMissing.firstMissingPositive(new int[]{1,2}));
+    }
 }
