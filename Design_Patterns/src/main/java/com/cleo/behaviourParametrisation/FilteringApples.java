@@ -7,7 +7,7 @@ import java.util.List;
 import java.util.function.Predicate;
 
 public class FilteringApples {
-    private static List<Apple> inventory = Arrays.asList(
+    private static final List<Apple> inventory = Arrays.asList(
             new Apple("GREEN",160),
             new Apple("BLUE",80),
             new Apple("RED", 70),

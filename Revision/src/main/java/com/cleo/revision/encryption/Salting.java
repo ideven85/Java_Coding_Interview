@@ -1,4 +1,4 @@
-package com.cleo.revision.enctyption;
+package com.cleo.revision.encryption;
 
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
