@@ -41,7 +41,7 @@ public class EmployeeRepository {
         String serializedString = this.serializer.serialize(employee);
 
         Path path = Paths.get(employee.getFullName()
-                .replace(" ", "_") + ".rec");
+                .replace(" ", "_") + ".json");
         Files.write(path, serializedString.getBytes());
     }
 
