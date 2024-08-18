@@ -3,6 +3,7 @@ package com.cleo.best_price_finder;
 import java.util.List;
 import java.util.concurrent.CompletableFuture;
 import java.util.concurrent.Executor;
+import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
 import static java.util.stream.Collectors.toList;
@@ -16,6 +17,8 @@ public class BestPriceCalculator {
             new Shop("jkl"),
             new Shop("mnop")
     );
+
+    private ExecutorService executorService;
 
     private final Executor executor = Executors.newFixedThreadPool
             (Math.max(shopsInMall.size(),100),(Runnable r)->{

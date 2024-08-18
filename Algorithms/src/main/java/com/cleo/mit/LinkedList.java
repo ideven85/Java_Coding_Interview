@@ -1,4 +1,5 @@
 package com.cleo.mit;
+/*
 
 public class LinkedList<T> {
 
@@ -44,3 +45,4 @@ public class LinkedList<T> {
     }
 
 }
+*/
