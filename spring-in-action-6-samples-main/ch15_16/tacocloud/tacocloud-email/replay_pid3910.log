@@ -4457,7 +4457,7 @@ instanceKlass java/util/Timer
 instanceKlass java/util/TimerTask
 instanceKlass groovy/lang/MetaProperty
 instanceKlass groovy/lang/ListWithDefault
-instanceKlass groovy/lang/Range
+instanceKlass groovy/lang/com.cleo.revision.Range
 instanceKlass org/codehaus/groovy/reflection/GeneratedMetaMethod$DgmMethodRecord
 instanceKlass groovy/lang/MetaClassRegistry$MetaClassCreationHandle
 instanceKlass org/codehaus/groovy/runtime/m12n/ExtensionModuleRegistry
