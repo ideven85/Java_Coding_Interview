@@ -28,7 +28,7 @@ public class StreamDemo {
             return -1;
     }
 
-    public static String terminalStreamOperation(List<List<String>> list){
+    public static void terminalStreamOperations(List<List<String>> list){
 
         //Collect
         var startsWithS = list
@@ -41,7 +41,8 @@ public class StreamDemo {
         String concatenated = startsWithS
                 .stream()
                         .reduce("",(partialString,element)->partialString +" " + element).trim();
-        return concatenated;
+        System.out.println(concatenated);
+
 
     }
 
@@ -87,12 +88,12 @@ public class StreamDemo {
         var time3 = System.nanoTime();
         System.out.println(intermediateResults);
         System.out.println(intermediateResults1);
-        System.out.println(list);
+    /*    System.out.println(list);
         System.out.println(list2);
         System.out.println(time2-time1);
-        System.out.println(time3-time2);
+        System.out.println(time3-time2);*/
 
-        System.out.println(terminalStreamOperation(listOfLists));
+        terminalStreamOperations(listOfLists);
 
     }
 }
