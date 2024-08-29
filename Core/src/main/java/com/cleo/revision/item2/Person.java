@@ -1,6 +1,53 @@
 package com.cleo.revision.item2;
 
-public class Person {
+/**
+ * The Following record is same as the final class below
+ */
+record Person_Record(int age, String name){}
+
+
+final class Person1 {
+    private int age;
+    private String name;
+
+    public Person1(){
+
+    }
+    public Person1(int age, String name) {
+        this.age = age;
+        this.name = name;
+    }
+
+    public int age() {
+        return age;
+    }
+
+    public String name() {
+        return name;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+//implementation not shown for brevity
+        return super.equals(o);
+    }
+
+    @Override
+    public int hashCode() {
+//implementation not shown for brevity
+        return super.hashCode();
+    }
+
+    @Override
+    public String toString() {
+//implementation not shown for brevity
+        return super.toString();
+    }
+}
+
+
+
+public class Person{
     //First 3 parameters do not have a default value
     private final String name;
     private final int age;
@@ -31,7 +78,12 @@ public class Person {
             return new Person(this);
         }
     }
+    /*public Person(){
+        this(Builder)
+        //this(builder);
+    }*/
     public Person(Builder builder){
+
         this.name = builder.name;
         this.age = builder.age;
         this.sex= builder.sex;

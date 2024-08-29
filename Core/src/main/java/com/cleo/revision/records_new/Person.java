@@ -23,5 +23,6 @@ public record Person(String name, int age, String school) implements Student {
        Person deven = new Person("Deven",21, "IIIT Hyderabad");
         System.out.println(student);
         System.out.println(deven.name()+" "+deven.getSchoolName());
+        System.out.println(deven);
     }
 }
