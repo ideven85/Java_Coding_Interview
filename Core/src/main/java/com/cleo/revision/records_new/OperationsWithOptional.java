@@ -3,6 +3,8 @@ package com.cleo.revision.records_new;
 import java.util.Optional;
 import static java.util.Optional.empty;
 import static java.util.Optional.of;
+
+
 public record OperationsWithOptional(Optional<Integer> val1, Optional<Integer> val2) {
 
   public static void main(String... args) {
@@ -15,7 +17,7 @@ public record OperationsWithOptional(Optional<Integer> val1, Optional<Integer> v
 
     Optional<Integer> opt1 = of(5);
     Optional<Integer> opt2 = opt1.or(() -> of(4));
-    System.out.println(max(opt1,opt2).get()+" ");
+    System.out.println(max(opt1,opt2).orElse(-1)+" ");
     System.out.println(
             of(5).or(() -> of(4))
     );
