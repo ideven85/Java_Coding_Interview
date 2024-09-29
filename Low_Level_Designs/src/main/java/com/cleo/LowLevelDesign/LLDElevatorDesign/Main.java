@@ -18,7 +18,7 @@ public class Main {
         floorList.add(floor3);
         floorList.add(floor4);
         floorList.add(floor5);
-
+        System.out.println(floorList);
         Building building = new Building(floorList);
 
     }

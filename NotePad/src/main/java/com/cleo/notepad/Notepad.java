@@ -13,6 +13,7 @@ import java.util.Date;
 //import p1.MyFileFilter;
 
 /************************************/
+//todo redo
 class FileOperation {
     Notepad npd;
 
@@ -217,7 +218,7 @@ class FileOperation {
 //////////////////////////////////////
 }// end defination of class FileOperation
 
-/************************************/
+//todo redo
 public class Notepad implements ActionListener, MenuConstants {
 
     JFrame f;

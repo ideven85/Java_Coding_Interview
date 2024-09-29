@@ -27,10 +27,10 @@
         <module>NotePad</module>
         <module>Tetris</module>
 
-        <module>Best_Price_Finder</module>
-        <module>Design_Patterns</module>
+<!--        <module>Best_Price_Finder</module>-->
+<!--        <module>Design_Patterns</module>-->
         <module>Employee_Management</module>
-        <module>Spring_Recipes</module>
+<!--        <module>Spring_Recipes</module>-->
         <module>Core</module>
     </modules>
     <properties>
