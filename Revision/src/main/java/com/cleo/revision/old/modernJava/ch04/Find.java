@@ -7,8 +7,7 @@ import static java.nio.file.FileVisitResult.*;
 
 public class Find {
 
-    public static class Finder
-            extends SimpleFileVisitor<Path> {
+    public static class Finder extends SimpleFileVisitor<Path> {
 
         private final PathMatcher matcher;
         private int numMatches = 0;
@@ -24,7 +23,7 @@ public class Find {
             Path name = file.getFileName();
             if (name != null && matcher.matches(name)) {
                 numMatches++;
-                System.out.println(file);
+                //System.out.println(file);
             }
         }
 

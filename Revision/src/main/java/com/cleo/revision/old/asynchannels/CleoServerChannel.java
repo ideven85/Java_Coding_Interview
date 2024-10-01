@@ -11,8 +11,7 @@ import java.util.Arrays;
 import java.util.Set;
 
 
-public class
-CleoServerChannel {
+public class CleoServerChannel {
 
 
 

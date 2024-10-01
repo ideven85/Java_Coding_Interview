@@ -17,6 +17,7 @@ public class ReadingFiles {
     private static final String FILE= Objects.requireNonNull(ReadingFiles.class.getResource("./rural.txt")).getFile();
 
     public static void main(String[] args) throws Exception{
+        System.out.println(Paths.get(FILE));
       BufferedReader reader = new BufferedReader(new FileReader(FILE));
        // InputStreamReader in = new InputStreamReader(FILE);
         measureTime("BufferedReader.readLine() into LinkedList", ReadingFiles::bufferReaderToLinkedList, FILE);
