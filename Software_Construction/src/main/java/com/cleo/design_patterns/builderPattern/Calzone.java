@@ -1,4 +1,4 @@
-package com.cleo.design_patterns.BuilderPattern;
+package com.cleo.design_patterns.builderPattern;
 
 public class Calzone extends Pizza{
 	private final boolean sauceInside;

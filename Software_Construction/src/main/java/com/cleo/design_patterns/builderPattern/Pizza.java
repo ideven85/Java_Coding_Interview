@@ -1,4 +1,4 @@
-package com.cleo.design_patterns.BuilderPattern;
+package com.cleo.design_patterns.builderPattern;
 
 import java.util.EnumSet;
 import java.util.Objects;

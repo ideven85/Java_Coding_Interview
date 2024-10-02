@@ -1,4 +1,6 @@
 package com.cleo.revision.visitorPattern;
+
+//todo clean up
 sealed interface Node{
     int eval();
 }

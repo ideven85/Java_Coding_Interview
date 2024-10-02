@@ -1,9 +1,9 @@
-package com.cleo.design_patterns.BuilderPattern;
+package com.cleo.design_patterns.builderPattern;
 
 import java.util.EnumSet;
 
-import static com.cleo.design_patterns.BuilderPattern.NyPizza.Size.SMALL;
-import static com.cleo.design_patterns.BuilderPattern.Pizza.Topping.*;
+import static com.cleo.design_patterns.builderPattern.NyPizza.Size.SMALL;
+import static com.cleo.design_patterns.builderPattern.Pizza.Topping.*;
 
 public class Main {
 
