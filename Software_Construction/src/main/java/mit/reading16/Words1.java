@@ -1,11 +1,10 @@
-package reading16;
+package mit.reading16;
 
 import java.io.File;
 import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
-import java.util.Set;
 
 public class Words1 {
     private static int count;

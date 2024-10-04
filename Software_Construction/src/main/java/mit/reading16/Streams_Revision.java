@@ -1,4 +1,4 @@
-package reading16;
+package mit.reading16;
 
 import java.util.Arrays;
 import java.util.List;
@@ -20,7 +20,7 @@ public class Streams_Revision {
         System.out.println(c);
         String s="a";StringBuilder tb = new StringBuilder(s);
         f(s,tb);
-        
+
         System.out.println(tb);
     }
    static void f(String s, StringBuilder sb){
