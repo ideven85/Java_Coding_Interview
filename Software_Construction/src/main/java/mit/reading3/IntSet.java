@@ -20,12 +20,27 @@ public class IntSet {
 
     }
 
-    public int pickRandomly(Set<Integer> set){
-            return 0;
+    public static int pickRandomly(Set<Integer> set){
+           int x = new Random(set.size()).nextInt();
+        //System.out.println(x);
+        int i=0;
+        for(var z:set){
+            if(i==x)
+                return z;
+        }
+        return set.iterator().next();
 
     }
 
     public Set<Integer> intersect(Set<Integer> that) {
-        throw new RuntimeException("not implemented yet");
+        Set<Integer> result = new HashSet<>();
+        if(this.set.isEmpty()||that.isEmpty()){
+            return result;
+        }
+        for(var x:this.set){
+            if(that.contains(x))
+                result.add(x);
+        }
+        return result;
     }
 }

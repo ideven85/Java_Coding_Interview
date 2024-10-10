@@ -16,10 +16,31 @@ public class PowerMod {
      * @return base^exponent (mod modulus)
      */
     public static int powerMod(int base, int exponent, int modulus) {
-        return powerModSlow(base, exponent, modulus);
+        //return powerModSlow(base, exponent, modulus);
+        int result;
+        if(exponent==0)
+            result=1;
+        else if(exponent==1)
+            result=base;
+        else if(exponent%2==0){
+
+            result=powerMod(base,exponent/2,modulus);
+            result*=result;
+
+            System.out.println("Even:"+result);
+
+        }else{
+
+            result=base*powerMod(base,exponent-1,modulus);
+
+            System.out.println("Odd:"+result);
+
+
+        }
+        return result/modulus;
     }
     
-    private static int powerModSlow(int base, int exponent, int modulus) {
+    /*private static int powerModSlow(int base, int exponent, int modulus) {
         BigInteger n = BigInteger.ONE;
         for (int i = 0; i < exponent; ++i) {
             n = n.multiply(BigInteger.valueOf(base));
@@ -43,5 +64,8 @@ public class PowerMod {
             result = base * powerModFast(base, exponent-1, modulus);
         }
         return (int) (result % modulus);
+    }*/
+    public static void main(String[] args) {
+        System.out.println(powerMod(3,5,1));
     }
 }

@@ -5,6 +5,7 @@ import org.junit.Test;
 
 import java.util.Set;
 
+import static mit.reading3.IntSet.pickRandomly;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
 
@@ -28,7 +29,9 @@ public class IntSetTest {
     @Test
     public void testDrawFromSet() {
         Set<Integer> set = Set.of(293, 384, 10, 5, -3, 99);
-        int result = -3;
+        int result = pickRandomly(set);
+        System.out.println(result);
+        System.out.println(Math.abs(Integer.MIN_VALUE));
         assertTrue("Set contains:", set.contains(result));
     }
         // This test covers this.size=1, that.size=1, result.size=0
