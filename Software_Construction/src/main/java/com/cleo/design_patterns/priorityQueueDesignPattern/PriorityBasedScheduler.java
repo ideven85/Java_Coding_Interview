@@ -70,7 +70,9 @@ public class PriorityBasedScheduler<T extends Comparable<T>> {
 
     public void maxHeapIfyDown(){
         int parentIndex = 0, childIndex1 = 1, childIndex2 = 2;
-        while (childIndex2 < numberOfTasks && ((tasks.get(parentIndex).compareTo(tasks.get(childIndex1))<=0) || (tasks.get(parentIndex).compareTo(tasks.get(childIndex2))<=0))) {
+        while (childIndex2 < numberOfTasks
+                && ((tasks.get(parentIndex).compareTo(tasks.get(childIndex1))<=0)
+                || (tasks.get(parentIndex).compareTo(tasks.get(childIndex2))<=0))) {
             int minIndex;
             if (tasks.get(childIndex1).compareTo(tasks.get(childIndex2))>=0) {
                 minIndex = childIndex1;

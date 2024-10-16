@@ -2,7 +2,7 @@ package mit.reading3;
 
 public class HailStone {
         public static void main(String[] args) {
-            int n = 3;
+            int n = 1;
             while (n != 1) {
                 if (n % 2 == 0) {
                     n = n / 2;
@@ -12,7 +12,7 @@ public class HailStone {
                     System.out.print(n + " ");
                 }
             }
-            //System.out.println(n);
+           // System.out.println(n);
         }
 
     }

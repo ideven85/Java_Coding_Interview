@@ -1,4 +1,4 @@
-package com.cleo.revision.events;
+package com.cleo.design_patterns.structural_design.events;
 
 
 import javax.swing.*;

@@ -32,14 +32,12 @@ public class ExecutorServiceDemo {
                 list1.add(f(el));
             }
           //  System.out.println(list1);
-            CompletableFuture<Long> completableFuture = new CompletableFuture();
+            CompletableFuture<Long> completableFuture = new CompletableFuture<>();
             for(var element:list1)
                 executorService.submit(()->{
                     try {
                         System.out.print(completableFuture.supplyAsync(() ->f(element)).get()+" ");
-                    } catch (InterruptedException e) {
-                        throw new RuntimeException(e);
-                    } catch (ExecutionException e) {
+                    } catch (InterruptedException | ExecutionException e) {
                         throw new RuntimeException(e);
                     }
                 });

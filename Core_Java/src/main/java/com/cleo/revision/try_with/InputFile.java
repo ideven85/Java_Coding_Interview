@@ -1,10 +1,7 @@
 package com.cleo.revision.try_with;
 
-import javax.annotation.Resources;
 import java.io.*;
-import java.nio.charset.StandardCharsets;
-import java.util.Map;
-import java.util.Properties;
+
 import java.util.StringTokenizer;
 
 

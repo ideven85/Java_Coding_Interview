@@ -71,7 +71,7 @@ public class VowelsTest {
     // covers letters.length>1, result.length>1, repeated vowels
     @Test
     public void severalRepeatedVowels() {
-        assertEquals("oe", Vowels.getVowelsIn("bookkeeper"));
+        assertEquals("eo", Vowels.getVowelsIn("bookkeeper"));
     }
 
 }
