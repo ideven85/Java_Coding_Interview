@@ -17,7 +17,9 @@ public class FileReading {
         try {
             String path =System.getProperty("user.dir")+"/src/main/resources/data.txt";
 
-            try(FileInputStream fis = new FileInputStream(System.getProperty("user.dir")+"/src/main/resources/data.txt"); ZipOutputStream zip = new ZipOutputStream(new FileOutputStream("data.zip"));FileInputStream fileToZip = new FileInputStream(new File(path))){
+            try(FileInputStream fis = new FileInputStream(System.getProperty("user.dir")+"/src/main/resources/data.txt");
+                ZipOutputStream zip = new ZipOutputStream(new FileOutputStream("data.zip"));
+                FileInputStream fileToZip = new FileInputStream(new File(path))){
                 System.out.println(fis.toString());
                 ZipEntry zipEntry = new ZipEntry(new File(System.getProperty("user.dir")+"/src/main/resources/data.txt").getName());
                 zip.putNextEntry(zipEntry);

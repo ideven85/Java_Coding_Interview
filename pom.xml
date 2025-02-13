@@ -33,6 +33,7 @@
 <!--        <module>Spring_Recipes</module>-->
         <module>Core_Java</module>
         <module>Software_Construction</module>
+        <module>Blockchain</module>
     </modules>
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
