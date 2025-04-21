@@ -99,6 +99,13 @@
     </dependencyManagement>
 
         <dependencies>
+            <!-- https://mvnrepository.com/artifact/org.apache.iceberg/iceberg-core -->
+<dependency>
+    <groupId>org.apache.iceberg</groupId>
+    <artifactId>iceberg-core</artifactId>
+    <version>1.8.1</version>
+    <scope>runtime</scope>
+</dependency>
             <!-- https://mvnrepository.com/artifact/com.google.inject/guice -->
             <dependency>
                 <groupId>com.google.inject</groupId>
