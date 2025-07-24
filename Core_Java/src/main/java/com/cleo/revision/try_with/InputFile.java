@@ -2,6 +2,11 @@ package com.cleo.revision.try_with;
 
 import java.io.*;
 
+import java.time.Instant;
+import java.time.LocalDate;
+import java.time.LocalDateTime;
+import java.time.LocalTime;
+import java.util.Date;
 import java.util.StringTokenizer;
 
 
@@ -46,8 +51,18 @@ public class InputFile {
         }
 
     }
-    public static String getDataFromFileC() {
+    public static String getDataFromFileC() throws IOException {
         String file = System.getProperties().get("user.dir").toString()+"/resources/hi.js";
+        File f = new File(file);
+        //boolean b =f.createNewFile();
+        //LocalDateTime time = LocalDateTime.now().toLocalDate().;
+       var  d = LocalDate.of(2001,1,3);
+        Date date = new Date();
+        var m=date.toInstant().getEpochSecond();
+        System.out.println(m);
+        boolean x=f.setLastModified(m);
+        System.out.println("Changed modification time:"+x);
+
         try(BufferedReader reader = new BufferedReader(new FileReader(file))) {
             while (reader.read() != -1) {
                 System.out.println(reader.readLine());
@@ -58,7 +73,7 @@ public class InputFile {
         return "Done";
 
     }
-    public static void main(String[] args)  {
+    public static void main(String[] args)  throws IOException {
 
         ClassLoader classloader = Thread.currentThread().getContextClassLoader();
         //InputStream in = new BufferedInputStream(classloader.getResourceAsStream("resources/hi.js"));

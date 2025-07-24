@@ -34,6 +34,7 @@
         <module>Core_Java</module>
         <module>Software_Construction</module>
         <module>Blockchain</module>
+        <module>demo</module>
     </modules>
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -140,11 +141,7 @@
                 <artifactId>jmh-generator-annprocess</artifactId>
                 <version>1.35</version>
             </dependency>
-            <dependency>
-                <groupId>org.ow2.asm</groupId>
-                <artifactId>asm</artifactId>
-                <version>9.3</version> <!-- Use newer version of ASM -->
-            </dependency>
+
 
             <dependency>
                 <groupId>nu.pattern</groupId>

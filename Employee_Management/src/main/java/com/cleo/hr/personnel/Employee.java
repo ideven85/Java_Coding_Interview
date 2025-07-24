@@ -7,6 +7,7 @@ import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
+import java.util.Arrays;
 
 /*
 Models an employee form a business perspective
@@ -30,7 +31,7 @@ public abstract class Employee {
     public String getEmail() {
         return this.firstName + "." +
                 this.lastName +
-                "@globomanticshr.com";
+                "@cleo.com";
     }
 
     @Override
@@ -43,7 +44,8 @@ public abstract class Employee {
         sb.append(getFullName());
         sb.append(System.lineSeparator());
         sb.append("POSITION: ");
-        String type = this.getClass().getTypeName();
+        String type = this.getClass().getName();
+        System.out.println(this.getClass().getName().split("\\.")[4]);
         type = type.substring(type.lastIndexOf('.') + 1);
         sb.append(type);
         sb.append(System.lineSeparator());
@@ -83,22 +85,7 @@ public abstract class Employee {
         this.nbHoursPerWeek = nbHoursPerWeek;
     }
 
-   /* public String getFirstName() {
-        return firstName;
-    }
 
-    public void setFirstName(String firstName) {
-        this.firstName = firstName;
-    }
-
-    public String getLastName() {
-        return lastName;
-    }
-
-    public void setLastName(String lastName) {
-        this.lastName = lastName;
-    }
-*/
     public String getFullName(){
         return this.firstName + " " + this.lastName;
     }
